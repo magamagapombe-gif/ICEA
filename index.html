@@ -3,1150 +3,537 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invest & Grow with ICEA Lion Uganda</title>
+<title>Batema Kenneth — ICEA Lion Authorised Agent Uganda</title>
+<meta name="description" content="Start saving from UGX 200,000/month. Grow up to 32% tax-free. Life cover included. Contact Batema Kenneth — ICEA Lion Authorised Agent Uganda.">
 <style>
-  :root {
-    --navy: #0A1628;
-    --navy2: #0f1f3d;
-    --gold: #C9973A;
-    --gold2: #e8b84b;
-    --red: #8B1A1A;
-    --red2: #a52020;
-    --white: #ffffff;
-    --offwhite: #f7f5f0;
-    --gray: #6b7280;
-    --light: #e8e4dc;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background: var(--offwhite);
-    color: var(--navy);
-    overflow-x: hidden;
-  }
-
-  /* ─── NAV ─── */
-  nav {
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  }
-
-  .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .nav-logo {
-    width: 40px;
-    height: 40px;
-    background: var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 18px;
-    color: var(--navy);
-  }
-
-  .nav-name {
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  .nav-name span {
-    color: var(--gold);
-    display: block;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-  }
-
-  .nav-cta {
-    background: var(--gold);
-    color: var(--navy);
-    border: none;
-    padding: 9px 20px;
-    border-radius: 24px;
-    font-weight: 700;
-    font-size: 13px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--gold2); }
-
-  /* ─── HERO ─── */
-  .hero {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1a0a0a 100%);
-    padding: 70px 5% 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,151,58,0.18) 0%, transparent 70%);
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; left: -60px;
-    width: 250px; height: 250px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(139,26,26,0.2) 0%, transparent 70%);
-  }
-
-  .hero-eyebrow {
-    display: inline-block;
-    background: rgba(201,151,58,0.15);
-    border: 1px solid rgba(201,151,58,0.4);
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 20px;
-    margin-bottom: 24px;
-  }
-
-  .hero h1 {
-    font-size: clamp(28px, 5vw, 52px);
-    color: var(--white);
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 18px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero h1 .accent { color: var(--gold); }
-
-  .hero p {
-    color: rgba(255,255,255,0.72);
-    font-size: clamp(14px, 2vw, 17px);
-    max-width: 560px;
-    margin: 0 auto 36px;
-    line-height: 1.7;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-stat {
-    text-align: center;
-  }
-
-  .hero-stat .num {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--gold);
-  }
-
-  .hero-stat .label {
-    font-size: 11px;
-    color: rgba(255,255,255,0.55);
-    margin-top: 2px;
-    letter-spacing: 0.06em;
-  }
-
-  .hero-btns {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-  }
-
-  .btn-primary {
-    background: var(--gold);
-    color: var(--navy);
-    padding: 14px 30px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 15px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform 0.2s, background 0.2s;
-  }
-
-  .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
-
-  .btn-secondary {
-    border: 2px solid rgba(255,255,255,0.3);
-    color: var(--white);
-    padding: 14px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    transition: border-color 0.2s;
-  }
-
-  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-
-  /* ─── SECTION TITLES ─── */
-  .section { padding: 64px 5%; }
-
-  .section-title {
-    text-align: center;
-    margin-bottom: 48px;
-  }
-
-  .section-title .eyebrow {
-    display: inline-block;
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  .section-title h2 {
-    font-size: clamp(22px, 3.5vw, 36px);
-    font-weight: 800;
-    color: var(--navy);
-    line-height: 1.2;
-  }
-
-  .section-title p {
-    color: var(--gray);
-    margin-top: 10px;
-    font-size: 15px;
-    max-width: 520px;
-    margin-inline: auto;
-  }
-
-  /* ─── INVESTA PLUS TABLE SECTION ─── */
-  .table-section { background: var(--white); }
-
-  .plan-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-  }
-
-  .plan-tab {
-    padding: 10px 24px;
-    border-radius: 24px;
-    border: 2px solid var(--light);
-    background: transparent;
-    color: var(--gray);
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .plan-tab.active {
-    background: var(--navy);
-    border-color: var(--navy);
-    color: var(--white);
-  }
-
-  .plan-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 800;
-    padding: 2px 7px;
-    border-radius: 10px;
-    margin-left: 4px;
-  }
-
-  .plan-panel { display: none; }
-  .plan-panel.active { display: block; }
-
-  .plan-header {
-    background: var(--navy);
-    border-radius: 12px 12px 0 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 14px 20px;
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .plan-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 12px 20px;
-    font-size: 14px;
-    border-bottom: 1px solid #f0ede8;
-    transition: background 0.15s;
-    align-items: center;
-  }
-
-  .plan-row:hover { background: #fdf9f3; }
-
-  .plan-row:last-child { border-radius: 0 0 12px 12px; border-bottom: none; }
-
-  .plan-row .premium { font-weight: 600; color: var(--navy); }
-  .plan-row .profit { color: #2d7a3a; font-weight: 600; }
-  .plan-row .saved { color: var(--gray); }
-
-  .plan-row .assured {
-    font-weight: 800;
-    color: var(--white);
-    background: var(--red);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 13px;
-    text-align: center;
-  }
-
-  .plan-term-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-
-  .term-badge {
-    background: var(--navy);
-    color: var(--gold);
-    font-weight: 800;
-    font-size: 14px;
-    padding: 8px 20px;
-    border-radius: 8px;
-    letter-spacing: 0.03em;
-  }
-
-  .term-note {
-    font-size: 13px;
-    color: var(--gray);
-  }
-
-  .table-wrapper {
-    overflow-x: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(10,22,40,0.1);
-  }
-
-  .table-inner { min-width: 560px; }
-
-  /* ─── CALCULATOR ─── */
-  .calc-section { background: var(--navy); }
-
-  .calc-card {
-    background: var(--navy2);
-    border: 1px solid rgba(201,151,58,0.25);
-    border-radius: 16px;
-    padding: 36px;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  .calc-card h3 {
-    color: var(--gold);
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 6px;
-  }
-
-  .calc-card .sub {
-    color: rgba(255,255,255,0.55);
-    font-size: 14px;
-    margin-bottom: 28px;
-  }
-
-  .calc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  @media (max-width: 480px) { .calc-grid { grid-template-columns: 1fr; } }
-
-  .calc-field label {
-    display: block;
-    color: rgba(255,255,255,0.6);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .calc-field input,
-  .calc-field select {
-    width: 100%;
-    background: rgba(255,255,255,0.08);
-    border: 1.5px solid rgba(255,255,255,0.15);
-    border-radius: 8px;
-    padding: 11px 14px;
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 600;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .calc-field input:focus,
-  .calc-field select:focus { border-color: var(--gold); }
-
-  .calc-field select option { background: var(--navy2); color: var(--white); }
-
-  .calc-btn {
-    width: 100%;
-    background: var(--gold);
-    color: var(--navy);
-    border: none;
-    border-radius: 10px;
-    padding: 14px;
-    font-weight: 800;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-  }
-
-  .calc-btn:hover { background: var(--gold2); transform: translateY(-1px); }
-
-  .calc-results {
-    display: none;
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .calc-results.show { display: block; }
-
-  .results-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  @media (max-width: 480px) { .results-grid { grid-template-columns: 1fr; } }
-
-  .result-card {
-    background: rgba(255,255,255,0.06);
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
-  }
-
-  .result-card .r-label {
-    font-size: 11px;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 6px;
-  }
-
-  .result-card .r-value {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--gold);
-  }
-
-  .result-card.highlight {
-    background: var(--red);
-    grid-column: 1 / -1;
-  }
-
-  .result-card.highlight .r-label { color: rgba(255,255,255,0.7); }
-  .result-card.highlight .r-value { font-size: 26px; color: var(--white); }
-
-  /* ─── OTHER PRODUCTS ─── */
-  .products-section { background: var(--offwhite); }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-  }
-
-  .product-card {
-    background: var(--white);
-    border-radius: 14px;
-    padding: 24px;
-    border: 1.5px solid var(--light);
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    cursor: pointer;
-  }
-
-  .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(10,22,40,0.1);
-    border-color: var(--gold);
-  }
-
-  .product-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--navy), var(--navy2));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    margin-bottom: 16px;
-  }
-
-  .product-card h4 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--navy);
-  }
-
-  .product-card p {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.6;
-  }
-
-  .product-tag {
-    display: inline-block;
-    margin-top: 12px;
-    background: rgba(201,151,58,0.12);
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  /* ─── BENEFITS ─── */
-  .benefits-section { background: var(--white); }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-  }
-
-  .benefit-item {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-
-  .benefit-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .benefit-item h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-
-  .benefit-item p {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.55;
-  }
-
-  /* ─── AGENT SECTION ─── */
-  .agent-section {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--red) 100%);
-    padding: 64px 5%;
-    text-align: center;
-  }
-
-  .agent-section h2 {
-    color: var(--white);
-    font-size: clamp(22px, 3.5vw, 36px);
-    font-weight: 800;
-    margin-bottom: 14px;
-  }
-
-  .agent-section p {
-    color: rgba(255,255,255,0.72);
-    font-size: 16px;
-    margin-bottom: 36px;
-    max-width: 480px;
-    margin-inline: auto;
-    margin-bottom: 36px;
-  }
-
-  .contact-cards {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .contact-card {
-    background: rgba(255,255,255,0.12);
-    border: 1.5px solid rgba(255,255,255,0.25);
-    border-radius: 14px;
-    padding: 20px 28px;
-    color: var(--white);
-    text-align: center;
-    min-width: 180px;
-    transition: background 0.2s;
-  }
-
-  .contact-card:hover { background: rgba(255,255,255,0.2); }
-
-  .contact-card .c-icon { font-size: 26px; margin-bottom: 8px; }
-  .contact-card .c-label { font-size: 11px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-  .contact-card .c-num { font-size: 16px; font-weight: 700; }
-
-  .wa-btn-big {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #25D366;
-    color: var(--white);
-    padding: 16px 36px;
-    border-radius: 32px;
-    font-weight: 800;
-    font-size: 17px;
-    text-decoration: none;
-    margin-top: 28px;
-    transition: opacity 0.2s, transform 0.2s;
-  }
-
-  .wa-btn-big:hover { opacity: 0.9; transform: translateY(-2px); }
-
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--navy);
-    padding: 32px 5%;
-    text-align: center;
-    color: rgba(255,255,255,0.45);
-    font-size: 13px;
-  }
-
-  footer a { color: var(--gold); text-decoration: none; }
-
-  footer .disclaimer {
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
-
-  /* ─── FLOATING WA ─── */
-  .float-wa {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 200;
-    background: #25D366;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-    text-decoration: none;
-    font-size: 26px;
-    transition: transform 0.2s;
-    animation: pulse-wa 2.5s infinite;
-  }
-
-  .float-wa:hover { transform: scale(1.1); }
-
-  @keyframes pulse-wa {
-    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
-    50% { box-shadow: 0 4px 30px rgba(37,211,102,0.75); }
-  }
-
-  /* ─── TRUST BAR ─── */
-  .trust-bar {
-    background: var(--navy2);
-    padding: 16px 5%;
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255,255,255,0.65);
-    font-size: 13px;
-    font-weight: 500;
-  }
-
-  .trust-item span:first-child { font-size: 16px; }
-
-  @media (max-width: 600px) {
-    .plan-header, .plan-row { font-size: 12px; padding: 10px 12px; }
-    .plan-row .assured { font-size: 11px; padding: 3px 6px; }
-    nav { padding: 12px 4%; }
-  }
+:root {
+  --navy:#0A1628; --navy2:#0f1f3d; --gold:#C9973A; --gold2:#e8b84b;
+  --red:#8B1A1A; --red2:#a52020; --white:#ffffff; --offwhite:#f7f5f0;
+  --gray:#6b7280; --light:#e8e4dc; --green:#25D366;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--offwhite);color:var(--navy);overflow-x:hidden;}
+#loader{position:fixed;inset:0;background:var(--navy);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity 0.5s;}
+#loader.hide{opacity:0;pointer-events:none;}
+.loader-lion{font-size:56px;animation:bounce 0.7s infinite alternate;}
+.loader-bar{width:200px;height:4px;background:rgba(255,255,255,0.15);border-radius:4px;overflow:hidden;}
+.loader-fill{height:100%;background:var(--gold);border-radius:4px;animation:load 1.5s ease forwards;}
+.loader-text{color:rgba(255,255,255,0.6);font-size:13px;letter-spacing:0.1em;}
+@keyframes load{from{width:0}to{width:100%}}
+@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(-12px)}}
+nav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:12px 5%;position:sticky;top:0;z-index:500;box-shadow:0 2px 20px rgba(0,0,0,0.4);}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:17px;color:var(--navy);flex-shrink:0;border:2px solid rgba(255,255,255,0.2);}
+.nav-info{line-height:1.2;}
+.nav-name{color:var(--white);font-size:14px;font-weight:700;}
+.nav-role{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;}
+.nav-right{display:flex;gap:8px;align-items:center;}
+.nav-call{background:rgba(255,255,255,0.1);color:var(--white);border:1px solid rgba(255,255,255,0.2);padding:8px 14px;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;transition:background 0.2s;}
+.nav-call:hover{background:rgba(255,255,255,0.2);}
+.nav-share{background:rgba(201,151,58,0.15);color:var(--gold);border:1px solid rgba(201,151,58,0.3);padding:8px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:5px;}
+.nav-share:hover{background:rgba(201,151,58,0.3);}
+.nav-wa{background:var(--green);color:var(--white);padding:8px 16px;border-radius:20px;font-size:12px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;}
+.nav-wa:hover{opacity:0.85;}
+.ticker{background:var(--gold);overflow:hidden;white-space:nowrap;padding:7px 0;}
+.ticker-inner{display:inline-block;animation:ticker 28s linear infinite;}
+.ticker-inner span{margin:0 40px;font-size:12px;font-weight:700;color:var(--navy);}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,#1a0a0a 100%);padding:72px 5% 90px;text-align:center;position:relative;overflow:hidden;}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;}
+.hero-orb1{width:400px;height:400px;top:-120px;right:-100px;background:radial-gradient(circle,rgba(201,151,58,0.2) 0%,transparent 70%);}
+.hero-orb2{width:300px;height:300px;bottom:-80px;left:-80px;background:radial-gradient(circle,rgba(139,26,26,0.25) 0%,transparent 70%);}
+.hero-orb3{width:200px;height:200px;top:40%;left:10%;background:radial-gradient(circle,rgba(201,151,58,0.08) 0%,transparent 70%);}
+.agent-pill{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(201,151,58,0.3);border-radius:40px;padding:8px 20px;margin-bottom:24px;position:relative;z-index:1;}
+.agent-pill .dot{width:8px;height:8px;background:#4ade80;border-radius:50%;animation:pulse-dot 1.5s infinite;}
+.agent-pill span{color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;}
+.agent-pill .gold{color:var(--gold);}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.hero h1{font-size:clamp(28px,5.5vw,58px);color:var(--white);font-weight:900;line-height:1.1;margin-bottom:18px;position:relative;z-index:1;}
+.hero h1 .gold{color:var(--gold);}
+.hero h1 .underline{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:6px;}
+.hero-sub{color:rgba(255,255,255,0.65);font-size:clamp(14px,2vw,17px);max-width:560px;margin:0 auto 36px;line-height:1.7;position:relative;z-index:1;}
+.hero-stats{display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:40px;position:relative;z-index:1;max-width:600px;margin-inline:auto;margin-bottom:40px;}
+.hero-stat{flex:1;min-width:120px;padding:18px 12px;border-right:1px solid rgba(255,255,255,0.1);}
+.hero-stat:last-child{border-right:none;}
+.hero-stat .num{font-size:clamp(22px,4vw,34px);font-weight:900;color:var(--gold);}
+.hero-stat .lbl{font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;letter-spacing:0.06em;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:15px 32px;border-radius:32px;font-weight:800;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(201,151,58,0.4);transition:transform 0.2s,box-shadow 0.2s;}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(201,151,58,0.5);}
+.btn-outline{border:2px solid rgba(255,255,255,0.25);color:var(--white);padding:15px 32px;border-radius:32px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.heart-section{background:linear-gradient(160deg,#0a0a1a 0%,#1a0828 50%,#0a1628 100%);padding:80px 5%;text-align:center;position:relative;overflow:hidden;}
+.heart-section::before{content:'❤️';position:absolute;font-size:300px;opacity:0.03;top:50%;left:50%;transform:translate(-50%,-50%);}
+.heart-inner{max-width:760px;margin:0 auto;position:relative;z-index:1;}
+.heart-eyebrow{display:inline-block;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px;background:rgba(201,151,58,0.12);padding:6px 18px;border-radius:20px;border:1px solid rgba(201,151,58,0.25);}
+.heart-section h2{font-size:clamp(22px,4vw,40px);color:var(--white);font-weight:900;line-height:1.25;margin-bottom:28px;}
+.heart-section h2 em{color:var(--gold);font-style:normal;}
+.heart-para{color:rgba(255,255,255,0.72);font-size:clamp(15px,2vw,18px);line-height:1.85;margin-bottom:20px;}
+.heart-para strong{color:var(--white);}
+.heart-quote{border-left:4px solid var(--gold);padding:16px 24px;margin:28px 0;background:rgba(201,151,58,0.07);border-radius:0 12px 12px 0;text-align:left;}
+.heart-quote p{color:rgba(255,255,255,0.85);font-size:17px;font-style:italic;line-height:1.7;}
+.heart-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:17px 36px;border-radius:32px;font-weight:900;font-size:16px;text-decoration:none;box-shadow:0 8px 32px rgba(201,151,58,0.4);transition:transform 0.2s,box-shadow 0.2s;margin-top:8px;}
+.heart-cta:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(201,151,58,0.55);}
+.trust-bar{background:var(--navy2);padding:14px 5%;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.05);}
+.trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:12px;font-weight:500;}
+.section{padding:72px 5%;}
+.section-title{text-align:center;margin-bottom:48px;}
+.eyebrow{display:inline-block;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;}
+.section-title h2{font-size:clamp(24px,3.5vw,38px);font-weight:900;color:var(--navy);line-height:1.2;}
+.section-title p{color:var(--gray);margin-top:10px;font-size:15px;max-width:520px;margin-inline:auto;line-height:1.7;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.journey-section{background:var(--navy);padding:72px 5%;}
+.journey-section .section-title h2{color:var(--white);}
+.journey-section .section-title p{color:rgba(255,255,255,0.5);}
+.journey-track{max-width:700px;margin:0 auto;position:relative;}
+.journey-track::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--gold),var(--red));border-radius:3px;}
+.journey-step{display:flex;gap:24px;align-items:flex-start;margin-bottom:36px;position:relative;}
+.journey-step:last-child{margin-bottom:0;}
+.j-icon{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;position:relative;z-index:1;box-shadow:0 4px 16px rgba(201,151,58,0.4);}
+.j-content{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px 20px;flex:1;transition:border-color 0.2s;}
+.j-content:hover{border-color:rgba(201,151,58,0.4);}
+.j-year{display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;padding:3px 10px;border-radius:8px;margin-bottom:8px;letter-spacing:0.08em;}
+.j-title{color:var(--white);font-size:16px;font-weight:800;margin-bottom:6px;}
+.j-desc{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.6;}
+.j-amount{color:var(--gold);font-size:18px;font-weight:900;margin-top:8px;}
+.req-section{background:var(--white);}
+.req-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;}
+.req-card{background:var(--offwhite);border-radius:16px;padding:24px;border:2px solid var(--light);position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.req-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+.req-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--red));}
+.req-num{width:38px;height:38px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;margin-bottom:14px;}
+.req-card h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.req-card p{font-size:13px;color:var(--gray);line-height:1.6;}
+.req-card .req-note{margin-top:10px;background:rgba(201,151,58,0.1);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--gold);font-weight:600;}
+.req-bottom{text-align:center;margin-top:32px;padding:24px;background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:16px;max-width:900px;margin-inline:auto;margin-top:32px;}
+.req-bottom p{color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:14px;}
+.req-bottom strong{color:var(--gold);}
+.table-section{background:var(--offwhite);}
+.plan-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:28px;flex-wrap:wrap;}
+.plan-tab{padding:11px 26px;border-radius:26px;border:2px solid var(--light);background:transparent;color:var(--gray);font-weight:700;font-size:14px;cursor:pointer;transition:all 0.2s;position:relative;}
+.plan-tab.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.plan-tab .badge{position:absolute;top:-8px;right:-8px;background:var(--gold);color:var(--navy);font-size:9px;font-weight:800;padding:2px 7px;border-radius:10px;}
+.plan-panel{display:none;}
+.plan-panel.active{display:block;}
+.plan-term-info{display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;}
+.term-badge{background:var(--navy);color:var(--gold);font-weight:800;font-size:13px;padding:8px 20px;border-radius:8px;}
+.term-note{font-size:13px;color:var(--gray);}
+.table-wrapper{overflow-x:auto;border-radius:14px;box-shadow:0 6px 32px rgba(10,22,40,0.12);}
+.table-inner{min-width:580px;}
+.plan-header{background:var(--navy);display:grid;grid-template-columns:1.2fr 1fr 1fr 1.1fr;padding:14px 20px;color:var(--white);font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;border-radius:14px 14px 0 0;}
+.plan-row{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.1fr;padding:14px 20px;font-size:14px;border-bottom:1px solid #f0ede8;transition:background 0.15s,transform 0.15s;cursor:pointer;align-items:center;background:var(--white);}
+.plan-row:hover{background:#fdf6e8;transform:scale(1.005);}
+.plan-row:last-child{border-radius:0 0 14px 14px;border-bottom:none;}
+.plan-row .premium{font-weight:700;color:var(--navy);}
+.plan-row .profit{color:#16a34a;font-weight:700;}
+.plan-row .saved{color:var(--gray);}
+.plan-row .assured{font-weight:800;color:var(--white);background:var(--red);padding:5px 12px;border-radius:8px;font-size:13px;text-align:center;transition:background 0.2s;}
+.plan-row:hover .assured{background:var(--red2);}
+.tap-hint{text-align:center;margin-top:14px;color:var(--gray);font-size:13px;}
+.tap-hint span{color:var(--gold);font-weight:600;}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:800;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(4px);}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:var(--white);border-radius:20px;max-width:440px;width:100%;overflow:hidden;transform:scale(0.9) translateY(20px);transition:transform 0.3s;}
+.modal-overlay.open .modal{transform:scale(1) translateY(0);}
+.modal-header{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:28px 24px 20px;text-align:center;position:relative;}
+.modal-close{position:absolute;top:14px;right:16px;background:rgba(255,255,255,0.1);border:none;color:var(--white);width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.modal-close:hover{background:rgba(255,255,255,0.25);}
+.modal-plan-label{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;}
+.modal-amount{color:var(--white);font-size:26px;font-weight:900;margin-bottom:4px;}
+.modal-assured{display:inline-block;background:var(--red);color:var(--white);font-size:13px;font-weight:700;padding:5px 16px;border-radius:20px;margin-top:6px;}
+.modal-body{padding:24px;}
+.modal-details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.modal-detail{background:var(--offwhite);border-radius:10px;padding:12px;text-align:center;}
+.modal-detail .d-label{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+.modal-detail .d-value{font-size:15px;font-weight:800;color:var(--navy);}
+.modal-agent{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:12px;padding:16px;margin-bottom:20px;}
+.modal-agent-avatar{width:46px;height:46px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:var(--navy);flex-shrink:0;}
+.modal-agent-info .a-name{color:var(--white);font-weight:700;font-size:15px;}
+.modal-agent-info .a-role{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:0.06em;}
+.modal-agent-info .a-lic{color:rgba(255,255,255,0.5);font-size:10px;margin-top:2px;}
+.modal-cta-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;text-align:center;}
+.modal-actions{display:flex;flex-direction:column;gap:10px;}
+.modal-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;transition:opacity 0.2s,transform 0.2s;border:none;cursor:pointer;}
+.modal-btn:hover{opacity:0.88;transform:translateY(-1px);}
+.btn-wa{background:var(--green);color:var(--white);}
+.btn-call1{background:var(--navy);color:var(--white);}
+.btn-call2{background:var(--red);color:var(--white);}
+.modal-or{text-align:center;color:var(--gray);font-size:12px;margin:4px 0;}
+.calc-section{background:var(--navy);}
+.calc-card{background:var(--navy2);border:1px solid rgba(201,151,58,0.25);border-radius:20px;padding:36px;max-width:660px;margin:0 auto;}
+.calc-card h3{color:var(--gold);font-size:22px;font-weight:800;margin-bottom:6px;}
+.calc-card .sub{color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:28px;}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+@media(max-width:480px){.calc-grid{grid-template-columns:1fr;}}
+.calc-field label{display:block;color:rgba(255,255,255,0.55);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.calc-field input,.calc-field select{width:100%;background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 14px;color:var(--white);font-size:15px;font-weight:600;outline:none;transition:border-color 0.2s;}
+.calc-field input:focus,.calc-field select:focus{border-color:var(--gold);}
+.calc-field select option{background:var(--navy2);color:var(--white);}
+.calc-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);border:none;border-radius:12px;padding:15px;font-weight:900;font-size:17px;cursor:pointer;transition:transform 0.2s;box-shadow:0 6px 20px rgba(201,151,58,0.35);}
+.calc-btn:hover{transform:translateY(-2px);}
+.calc-results{display:none;margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);}
+.calc-results.show{display:block;}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+@media(max-width:460px){.results-grid{grid-template-columns:1fr;}}
+.result-card{background:rgba(255,255,255,0.06);border-radius:12px;padding:16px;text-align:center;}
+.result-card .r-label{font-size:11px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;}
+.result-card .r-value{font-size:18px;font-weight:800;color:var(--gold);}
+.result-card.highlight{background:var(--red);grid-column:1/-1;}
+.result-card.highlight .r-label{color:rgba(255,255,255,0.7);}
+.result-card.highlight .r-value{font-size:24px;color:var(--white);}
+.products-section{background:var(--white);}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;}
+.product-card{background:var(--offwhite);border-radius:16px;padding:24px;border:1.5px solid var(--light);transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s;cursor:pointer;position:relative;overflow:hidden;}
+.product-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--red));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.product-card:hover::after{transform:scaleX(1);}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(10,22,40,0.12);border-color:var(--gold);}
+.product-icon{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;}
+.product-card h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--navy);}
+.product-card p{font-size:13px;color:var(--gray);line-height:1.6;}
+.product-tag{display:inline-block;margin-top:12px;background:rgba(201,151,58,0.12);color:var(--gold);font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;letter-spacing:0.06em;text-transform:uppercase;}
+.benefits-section{background:var(--offwhite);}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;}
+.benefit-item{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:14px;background:var(--white);border:1.5px solid var(--light);transition:border-color 0.2s,box-shadow 0.2s;}
+.benefit-item:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,151,58,0.12);}
+.benefit-icon{font-size:28px;flex-shrink:0;}
+.benefit-item h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.benefit-item p{font-size:13px;color:var(--gray);line-height:1.55;}
+.faq-section{background:var(--white);}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.faq-item{background:var(--offwhite);border-radius:14px;border:1.5px solid var(--light);overflow:hidden;transition:border-color 0.2s,box-shadow 0.2s;}
+.faq-item.open{border-color:var(--gold);box-shadow:0 4px 20px rgba(201,151,58,0.12);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;cursor:pointer;font-weight:700;font-size:15px;color:var(--navy);gap:16px;user-select:none;}
+.faq-q:hover{color:var(--gold);}
+.faq-q .icon{width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:background 0.25s,transform 0.35s;font-weight:300;line-height:1;}
+.faq-item.open .faq-q .icon{background:var(--gold);color:var(--navy);transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);}
+.faq-a-inner{padding:0 22px 20px;color:var(--gray);font-size:14px;line-height:1.75;border-top:1px solid var(--light);}
+.faq-item.open .faq-a{max-height:400px;}
+.share-toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:var(--white);padding:12px 24px;border-radius:32px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:all 0.3s;z-index:700;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.4);}
+.share-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.share-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:900;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(4px);}
+.share-modal-overlay.open{opacity:1;pointer-events:all;}
+.share-modal{background:var(--white);border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:28px 24px 36px;transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);}
+.share-modal-overlay.open .share-modal{transform:translateY(0);}
+.share-modal h3{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.share-modal p{font-size:13px;color:var(--gray);margin-bottom:22px;}
+.share-options{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
+.share-opt{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:transform 0.2s;}
+.share-opt:hover{transform:translateY(-3px);}
+.share-opt-icon{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;}
+.share-opt-label{font-size:11px;font-weight:700;color:var(--gray);}
+.share-wa{background:#dcfce7;}
+.share-fb{background:#dbeafe;}
+.share-tw{background:#e0f2fe;}
+.share-copy{background:var(--offwhite);}
+.share-cancel{width:100%;padding:14px;border-radius:12px;border:2px solid var(--light);background:transparent;color:var(--gray);font-weight:700;font-size:15px;cursor:pointer;transition:border-color 0.2s;}
+.share-cancel:hover{border-color:var(--navy);}
+.agent-section{background:linear-gradient(135deg,var(--navy) 0%,#1a0830 50%,var(--red) 100%);padding:80px 5%;text-align:center;position:relative;overflow:hidden;}
+.agent-section::before{content:'🦁';position:absolute;font-size:200px;opacity:0.04;top:50%;left:50%;transform:translate(-50%,-50%);}
+.agent-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:20px;max-width:520px;margin:0 auto 36px;padding:28px;backdrop-filter:blur(6px);}
+.agent-avatar-lg{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;color:var(--navy);margin:0 auto 14px;border:3px solid rgba(255,255,255,0.2);}
+.agent-card .a-name{color:var(--white);font-size:22px;font-weight:800;margin-bottom:4px;}
+.agent-card .a-title{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;}
+.agent-card .a-lic{color:rgba(255,255,255,0.45);font-size:12px;}
+.contact-btns{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto;}
+.contact-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.cta-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 20px;border-radius:14px;font-weight:700;font-size:14px;text-decoration:none;transition:transform 0.2s,opacity 0.2s;border:none;cursor:pointer;flex-direction:column;}
+.cta-btn:hover{transform:translateY(-2px);opacity:0.9;}
+.cta-wa-big{background:var(--green);color:var(--white);font-size:16px;padding:17px;flex-direction:row;}
+.cta-call1{background:var(--navy2);color:var(--white);border:1px solid rgba(255,255,255,0.2);}
+.cta-call2{background:var(--red2);color:var(--white);}
+.cta-num{font-size:11px;opacity:0.75;display:block;}
+footer{background:var(--navy);padding:36px 5%;text-align:center;color:rgba(255,255,255,0.4);font-size:12px;}
+footer a{color:var(--gold);text-decoration:none;}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap;}
+.footer-links a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-disc{max-width:600px;margin:12px auto 0;line-height:1.7;}
+.float-wa{position:fixed;bottom:24px;right:24px;z-index:600;background:var(--green);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.5);text-decoration:none;transition:transform 0.2s;animation:pulse-wa 2.5s infinite;}
+.float-wa:hover{transform:scale(1.1);}
+.float-label{position:absolute;right:70px;background:var(--navy);color:var(--white);font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;white-space:nowrap;opacity:0;transition:opacity 0.2s;}
+.float-wa:hover .float-label{opacity:1;}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.5)}50%{box-shadow:0 4px 36px rgba(37,211,102,0.8)}}
+@media(max-width:640px){.nav-right .nav-call{display:none;}.hero-stat{min-width:80px;padding:14px 8px;}.plan-header,.plan-row{font-size:11px;padding:10px 10px;}.contact-row{grid-template-columns:1fr;}.journey-track::before{left:24px;}.j-icon{width:48px;height:48px;font-size:18px;}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
+<div id="loader">
+  <div class="loader-lion">🦁</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text">ICEA LION · BATEMA KENNETH · AUTHORISED AGENT</div>
+</div>
+<div class="share-toast" id="shareToast">✅ Link copied to clipboard!</div>
+<div class="share-modal-overlay" id="shareModal" onclick="closeShareOutside(event)">
+  <div class="share-modal">
+    <h3>📤 Share This Page</h3>
+    <p>Help a friend or family member discover how to grow their money with ICEA Lion.</p>
+    <div class="share-options">
+      <div class="share-opt" onclick="shareWA()"><div class="share-opt-icon share-wa"><svg width="28" height="28" viewBox="0 0 24 24" fill="#16a34a"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div><span class="share-opt-label">WhatsApp</span></div>
+      <div class="share-opt" onclick="shareFB()"><div class="share-opt-icon share-fb"><svg width="28" height="28" viewBox="0 0 24 24" fill="#1d4ed8"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div><span class="share-opt-label">Facebook</span></div>
+      <div class="share-opt" onclick="shareTwitter()"><div class="share-opt-icon share-tw"><svg width="26" height="26" viewBox="0 0 24 24" fill="#0284c7"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div><span class="share-opt-label">Twitter/X</span></div>
+      <div class="share-opt" onclick="copyLink()"><div class="share-opt-icon share-copy">📋</div><span class="share-opt-label">Copy Link</span></div>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">Cancel</button>
+  </div>
+</div>
+<div class="ticker"><div class="ticker-inner"><span>🦁 ICEA Lion Uganda — Trusted Since 1964</span><span>💰 Earn up to 32% returns — Tax Free</span><span>📲 WhatsApp Batema Kenneth: 0702 377 999</span><span>🏦 Works with ANY bank or mobile money in Uganda</span><span>🛡️ Life Cover Included — No extra cost</span><span>✅ IRA Licensed · Equity Bancassurance Partner</span><span>🎓 Toto Education Plan · 👸 Lioness Plan · 🚗 Simba Motor</span><span>🦁 ICEA Lion Uganda — Trusted Since 1964</span><span>💰 Earn up to 32% returns — Tax Free</span><span>📲 WhatsApp Batema Kenneth: 0702 377 999</span><span>🏦 Works with ANY bank or mobile money in Uganda</span><span>🛡️ Life Cover Included — No extra cost</span><span>✅ IRA Licensed · Equity Bancassurance Partner</span><span>🎓 Toto Education Plan · 👸 Lioness Plan · 🚗 Simba Motor</span></div></div>
 <nav>
   <div class="nav-brand">
-    <div class="nav-logo">🦁</div>
-    <div class="nav-name">
-      ICEA Lion Uganda
-      <span>Authorised Agent</span>
-    </div>
+    <div class="nav-avatar">BK</div>
+    <div class="nav-info"><div class="nav-name">Batema Kenneth</div><div class="nav-role">ICEA Lion Authorised Agent</div></div>
   </div>
-  <a href="https://wa.me/256702377999" target="_blank" class="nav-cta">📲 Talk to Agent</a>
+  <div class="nav-right">
+    <button class="nav-share" onclick="openShare()">📤 Share</button>
+    <a href="tel:+256702377999" class="nav-call">📞 Call</a>
+    <a href="https://wa.me/256702377999?text=Hi%20Batema!%20I'm%20interested%20in%20ICEA%20Lion%20plans." target="_blank" class="nav-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a>
+  </div>
 </nav>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><span>✅</span> IRA Licensed Insurer</div>
-  <div class="trust-item"><span>🏦</span> Equity Bancassurance Partner</div>
-  <div class="trust-item"><span>🛡️</span> Since 1964 – 60+ Years</div>
-  <div class="trust-item"><span>🇺🇬</span> Uganda Regulated</div>
-</div>
-
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">🔥 Investa Plus — Uganda's #1 Savings Plan</div>
-  <h1>Save Monthly.<br><span class="accent">Grow Up to 32%.</span><br>Protect Your Family.</h1>
-  <p>ICEA Lion's Investa Plus lets you save with any bank or mobile money — and earn guaranteed profits while building life insurance coverage for your loved ones.</p>
-  
+  <div class="hero-orb hero-orb1"></div><div class="hero-orb hero-orb2"></div><div class="hero-orb hero-orb3"></div>
+  <div class="agent-pill"><div class="dot"></div><span>Agent <span class="gold">Batema Kenneth</span> is available now</span></div>
+  <h1>Save Monthly.<br><span class="gold">Grow Up to 32%.</span><br><span class="underline">Protect Your Family.</span></h1>
+  <p class="hero-sub">Uganda's most trusted savings + life cover plan. Start from just UGX 200,000/month — works with <strong style="color:white;">any bank or mobile money</strong>. Your money grows tax-free while your family stays protected.</p>
   <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="num">32%</div>
-      <div class="label">Max Growth Rate</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">5–7 Yrs</div>
-      <div class="label">Plan Duration</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">200K+</div>
-      <div class="label">Min Monthly (UGX)</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">Tax Free</div>
-      <div class="label">All Returns</div>
-    </div>
+    <div class="hero-stat"><div class="num" data-count="32">0</div><div class="lbl">Max % Return</div></div>
+    <div class="hero-stat"><div class="num" data-count="60">0</div><div class="lbl">Years in Uganda</div></div>
+    <div class="hero-stat"><div class="num">200K</div><div class="lbl">Start From (UGX)</div></div>
+    <div class="hero-stat"><div class="num">Tax<br>Free</div><div class="lbl">All Returns</div></div>
   </div>
-
   <div class="hero-btns">
-    <a href="#plans" class="btn-primary">📊 See Earnings Table</a>
-    <a href="https://wa.me/256702377999" target="_blank" class="btn-secondary">💬 Ask an Agent</a>
+    <a href="#plans" class="btn-gold">📊 View Earnings Table</a>
+    <a href="#contact" class="btn-outline">📞 Talk to Batema</a>
   </div>
 </section>
-
-<!-- PLANS TABLE -->
-<section class="section table-section" id="plans">
-  <div class="section-title">
-    <div class="eyebrow">Investa Plus — Official Rates</div>
-    <h2>How Much Will You Earn?</h2>
-    <p>Choose your term below to see your guaranteed savings, monthly profits, and life cover.</p>
+<div class="trust-bar">
+  <div class="trust-item">✅ IRA Licensed Insurer</div>
+  <div class="trust-item">🏦 Equity Bancassurance Partner</div>
+  <div class="trust-item">🛡️ Est. 1964 — 60+ Years</div>
+  <div class="trust-item">📍 Kampala, Uganda</div>
+  <div class="trust-item">💸 Zero Hidden Charges</div>
+</div>
+<section class="heart-section reveal">
+  <div class="heart-inner">
+    <div class="heart-eyebrow">The Real Reason This Matters</div>
+    <h2>Nobody Wakes Up Planning for<br><em>the Worst Day of Their Life.</em><br>But It Comes Anyway.</h2>
+    <p class="heart-para">Think about the person who works hard every single day — early mornings, late nights — doing everything for the people they love. <strong>Then one day, without warning, they are gone.</strong> And the family they fought so hard to protect is left with nothing. No money for the funeral. No money for school fees. No money to survive next month.</p>
+    <div class="heart-quote"><p>"The saddest thing I see is not death itself — it's the family left behind, borrowing money for a coffin, pulling children out of school, selling land just to survive. That should never happen to anyone who worked as hard as you do."</p></div>
+    <p class="heart-para">But here's what changes everything: <strong>you are reading this right now.</strong> That means you still have time. Starting from just UGX 200,000 a month — less than what most of us spend on airtime and food delivery — you can build a financial wall around the people you love. A wall that stands even if you can't.</p>
+    <p class="heart-para">Imagine your child sitting in class, fully paid up, even in the darkest moment. Imagine your spouse not having to beg relatives for money. Imagine leaving behind not grief — but a <strong>legacy.</strong> A lump sum that says: <em>"I thought of you. I planned for you. I loved you enough."</em></p>
+    <p class="heart-para" style="color:rgba(255,255,255,0.9);font-size:clamp(16px,2.2vw,20px);font-weight:700;">💬 That is what insurance really is. Not a cost. A love letter to your future.</p>
+    <a href="https://wa.me/256702377999?text=Hi%20Batema!%20I%20just%20read%20your%20page%20and%20I%20want%20to%20protect%20my%20family.%20How%20do%20I%20start%3F" target="_blank" class="heart-cta"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>I Want to Protect My Family — WhatsApp Batema</a>
   </div>
-
+</section>
+<section class="journey-section reveal" id="journey">
+  <div class="section-title">
+    <div class="eyebrow" style="color:var(--gold)">Your 5-Year Journey</div>
+    <h2>5 Years Sounds Long. It Really Isn't.</h2>
+    <p style="color:rgba(255,255,255,0.5);">5 years is just 60 monthly payments. You've done harder things than this.</p>
+  </div>
+  <div class="journey-track">
+    <div class="journey-step"><div class="j-icon">📝</div><div class="j-content"><div class="j-year">TODAY — DAY 1</div><div class="j-title">You Say Yes. Batema Handles Everything.</div><div class="j-desc">One WhatsApp message. Batema walks you through the form, helps you set up your bank account if needed, and your plan is active within 1–2 days. No complicated paperwork. No stress.</div></div></div>
+    <div class="journey-step"><div class="j-icon">📱</div><div class="j-content"><div class="j-year">MONTH 1–6 — BUILDING MOMENTUM</div><div class="j-title">Your First 6 Payments Land. Life Goes On.</div><div class="j-desc">You barely notice the monthly deduction. But your savings are stacking up quietly. Your family is already protected from day one with full life cover — no waiting period.</div><div class="j-amount">UGX 1,200,000 saved (at 200K/month)</div></div></div>
+    <div class="journey-step"><div class="j-icon">🎄</div><div class="j-content"><div class="j-year">YEAR 1 — FIRST ANNIVERSARY</div><div class="j-title">You've Already Done the Hardest Part.</div><div class="j-desc">Most people never save consistently for 12 months. You just did. Your pot is growing, your family is covered, and you've built a habit that will change your life.</div><div class="j-amount">UGX 2,400,000 saved + profits accumulating</div></div></div>
+    <div class="journey-step"><div class="j-icon">🎓</div><div class="j-content"><div class="j-year">YEAR 2–3 — THE MIDDLE STRETCH</div><div class="j-title">Life Happens. Your Plan Protects You.</div><div class="j-desc">Tough month? The paid-up provision has your back — you don't lose your savings if you miss a payment.</div><div class="j-amount">UGX 4.8M–7.2M saved (at 200K/month)</div></div></div>
+    <div class="journey-step"><div class="j-icon">🏁</div><div class="j-content"><div class="j-year">YEAR 5 — MATURITY DAY 🏆</div><div class="j-title">You Collect Your Full Sum Assured.</div><div class="j-desc">ICEA Lion pays out your full Sum Assured — all your savings plus your guaranteed 22% profit, completely tax free.</div><div class="j-amount" style="font-size:22px;">UGX 14,640,000+ lands in your account 🎉</div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="https://wa.me/256702377999?text=Hi%20Batema!%20I%20want%20to%20start%20my%20journey%20today." target="_blank" class="heart-cta" style="margin-top:0;">🚀 Start My Journey Today — WhatsApp Batema</a></div>
+</section>
+<section class="section req-section reveal" id="requirements">
+  <div class="section-title"><div class="eyebrow">How to Join</div><h2>What Do You Need to Start?</h2><p>Just 3 simple things. Batema does the rest.</p></div>
+  <div class="req-grid">
+    <div class="req-card"><div class="req-num">1</div><h4>🪪 Your National ID</h4><p>A valid Uganda National Identification Card. This is the only ID document required.</p><div class="req-note">✅ Passport or Refugee ID also accepted</div></div>
+    <div class="req-card"><div class="req-num">2</div><h4>🏦 A Bank Account or Mobile Money</h4><p>Any bank in Uganda works — Equity, Stanbic, DFCU, Centenary, Absa, KCB, PostBank. MTN MoMo and Airtel Money also accepted.</p><div class="req-note">🆕 Don't have one? Batema helps you open Equity Bank FREE — same day.</div></div>
+    <div class="req-card"><div class="req-num">3</div><h4>💰 UGX 200,000 Monthly</h4><p>The minimum monthly premium — roughly UGX 6,600 per day. Less than a plate of food. Save more for bigger returns.</p><div class="req-note">📈 Save UGX 500K/month → collect UGX 36.6M in 5 years</div></div>
+  </div>
+  <div class="req-bottom"><p>No bank account? <strong>No problem.</strong> Batema Kenneth will personally walk you through opening an Equity Bank account — completely free, same day.</p><a href="https://wa.me/256702377999?text=Hi%20Batema!%20I%20want%20to%20start%20but%20I%20don't%20have%20a%20bank%20account." target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);padding:14px 28px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;">💬 Help Me Get Started — WhatsApp Batema</a></div>
+</section>
+<section class="section table-section reveal" id="plans">
+  <div class="section-title"><div class="eyebrow">Investa Plus — Official Rates</div><h2>How Much Will You Earn?</h2><p>Tap any row to get a personalised quote from Batema Kenneth instantly.</p></div>
   <div class="plan-tabs">
-    <button class="plan-tab active" onclick="switchPlan('5yr', this)">5 Years <span class="plan-badge">22%</span></button>
-    <button class="plan-tab" onclick="switchPlan('6yr', this)">6 Years <span class="plan-badge">26%</span></button>
-    <button class="plan-tab" onclick="switchPlan('7yr', this)">7 Years <span class="plan-badge">32%</span></button>
+    <button class="plan-tab active" onclick="switchPlan('5yr',this)">5 Years<span class="badge">22%</span></button>
+    <button class="plan-tab" onclick="switchPlan('6yr',this)">6 Years<span class="badge">26%</span></button>
+    <button class="plan-tab" onclick="switchPlan('7yr',this)">7 Years<span class="badge">32%</span></button>
   </div>
-
-  <!-- 5 YEAR -->
   <div class="plan-panel active" id="5yr">
-    <div class="plan-term-info">
-      <div class="term-badge">5 YEARS — 22% PROFIT RATE</div>
-      <div class="term-note">Works with any bank or mobile money in Uganda</div>
-    </div>
-    <div class="table-wrapper">
-      <div class="table-inner">
-        <div class="plan-header">
-          <div>Monthly Premium</div>
-          <div>Monthly Profits</div>
-          <div>Total Saved</div>
-          <div>Sum Assured (Life Cover)</div>
-        </div>
-        <div class="plan-row"><div class="premium">UGX 200,000</div><div class="profit">44,000</div><div class="saved">12,000,000</div><div class="assured">14,640,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 300,000</div><div class="profit">66,000</div><div class="saved">18,000,000</div><div class="assured">21,960,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 400,000</div><div class="profit">88,000</div><div class="saved">24,000,000</div><div class="assured">29,280,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 500,000</div><div class="profit">110,000</div><div class="saved">30,000,000</div><div class="assured">36,600,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 1,000,000</div><div class="profit">220,000</div><div class="saved">60,000,000</div><div class="assured">73,200,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 2,000,000</div><div class="profit">440,000</div><div class="saved">120,000,000</div><div class="assured">146,400,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 3,000,000</div><div class="profit">660,000</div><div class="saved">180,000,000</div><div class="assured">219,600,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 5,000,000</div><div class="profit">1,100,000</div><div class="saved">300,000,000</div><div class="assured">366,000,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 10,000,000</div><div class="profit">2,200,000</div><div class="saved">600,000,000</div><div class="assured">732,000,000</div></div>
-      </div>
-    </div>
+    <div class="plan-term-info"><div class="term-badge">5 YEARS = 60 PAYMENTS — 22% PROFIT</div><div class="term-note">Any bank · Any mobile money · Uganda</div></div>
+    <div class="table-wrapper"><div class="table-inner">
+      <div class="plan-header"><div>Monthly Premium</div><div>Monthly Profits</div><div>Total Saved</div><div>Sum Assured</div></div>
+      <div class="plan-row" onclick="openModal('5yr',200000,44000,12000000,14640000)"><div class="premium">UGX 200,000</div><div class="profit">+44,000</div><div class="saved">12,000,000</div><div class="assured">14,640,000</div></div>
+      <div class="plan-row" onclick="openModal('5yr',300000,66000,18000000,21960000)"><div class="premium">UGX 300,000</div><div class="profit">+66,000</div><div class="saved">18,000,000</div><div class="assured">21,960,000</div></div>
+      <div class="plan-row" onclick="openModal('5yr',400000,88000,24000000,29280000)"><div class="premium">UGX 400,000</div><div class="profit">+88,000</div><div class="saved">24,000,000</div><div class="assured">29,280,000</div></div>
+      <div class="plan-row" onclick="openModal('5yr',500000,110000,30000000,36600000)"><div class="premium">UGX 500,000</div><div class="profit">+110,000</div><div class="saved">30,000,000</div><div class="assured">36,600,000</div></div>
+      <div class="plan-row" onclick="openModal('5yr',1000000,220000,60000000,73200000)"><div class="premium">UGX 1,000,000</div><div class="profit">+220,000</div><div class="saved">60,000,000</div><div class="assured">73,200,000</div></div>
+      <div class="plan-row" onclick="openModal('5yr',2000000,440000,120000000,146400000)"><div class="premium">UGX 2,000,000</div><div class="profit">+440,000</div><div class="saved">120,000,000</div><div class="assured">146,400,000</div></div>
+      <div class="plan-row" onclick="openModal('5yr',3000000,660000,180000000,219600000)"><div class="premium">UGX 3,000,000</div><div class="profit">+660,000</div><div class="saved">180,000,000</div><div class="assured">219,600,000</div></div>
+      <div class="plan-row" onclick="openModal('5yr',5000000,1100000,300000000,366000000)"><div class="premium">UGX 5,000,000</div><div class="profit">+1,100,000</div><div class="saved">300,000,000</div><div class="assured">366,000,000</div></div>
+      <div class="plan-row" onclick="openModal('5yr',10000000,2200000,600000000,732000000)"><div class="premium">UGX 10,000,000</div><div class="profit">+2,200,000</div><div class="saved">600,000,000</div><div class="assured">732,000,000</div></div>
+    </div></div>
   </div>
-
-  <!-- 6 YEAR -->
   <div class="plan-panel" id="6yr">
-    <div class="plan-term-info">
-      <div class="term-badge">6 YEARS — 26% PROFIT RATE</div>
-      <div class="term-note">Works with any bank or mobile money in Uganda</div>
-    </div>
-    <div class="table-wrapper">
-      <div class="table-inner">
-        <div class="plan-header">
-          <div>Monthly Premium</div>
-          <div>Monthly Profits</div>
-          <div>Total Saved</div>
-          <div>Sum Assured (Life Cover)</div>
-        </div>
-        <div class="plan-row"><div class="premium">UGX 200,000</div><div class="profit">52,000</div><div class="saved">14,400,000</div><div class="assured">18,144,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 300,000</div><div class="profit">78,000</div><div class="saved">21,600,000</div><div class="assured">27,216,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 400,000</div><div class="profit">104,000</div><div class="saved">28,800,000</div><div class="assured">36,288,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 500,000</div><div class="profit">130,000</div><div class="saved">36,000,000</div><div class="assured">45,360,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 1,000,000</div><div class="profit">260,000</div><div class="saved">72,000,000</div><div class="assured">90,720,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 2,000,000</div><div class="profit">520,000</div><div class="saved">144,000,000</div><div class="assured">181,440,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 3,000,000</div><div class="profit">780,000</div><div class="saved">216,000,000</div><div class="assured">272,160,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 5,000,000</div><div class="profit">1,300,000</div><div class="saved">360,000,000</div><div class="assured">453,600,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 10,000,000</div><div class="profit">2,600,000</div><div class="saved">720,000,000</div><div class="assured">907,200,000</div></div>
-      </div>
-    </div>
+    <div class="plan-term-info"><div class="term-badge">6 YEARS = 72 PAYMENTS — 26% PROFIT</div><div class="term-note">Any bank · Any mobile money · Uganda</div></div>
+    <div class="table-wrapper"><div class="table-inner">
+      <div class="plan-header"><div>Monthly Premium</div><div>Monthly Profits</div><div>Total Saved</div><div>Sum Assured</div></div>
+      <div class="plan-row" onclick="openModal('6yr',200000,52000,14400000,18144000)"><div class="premium">UGX 200,000</div><div class="profit">+52,000</div><div class="saved">14,400,000</div><div class="assured">18,144,000</div></div>
+      <div class="plan-row" onclick="openModal('6yr',300000,78000,21600000,27216000)"><div class="premium">UGX 300,000</div><div class="profit">+78,000</div><div class="saved">21,600,000</div><div class="assured">27,216,000</div></div>
+      <div class="plan-row" onclick="openModal('6yr',400000,104000,28800000,36288000)"><div class="premium">UGX 400,000</div><div class="profit">+104,000</div><div class="saved">28,800,000</div><div class="assured">36,288,000</div></div>
+      <div class="plan-row" onclick="openModal('6yr',500000,130000,36000000,45360000)"><div class="premium">UGX 500,000</div><div class="profit">+130,000</div><div class="saved">36,000,000</div><div class="assured">45,360,000</div></div>
+      <div class="plan-row" onclick="openModal('6yr',1000000,260000,72000000,90720000)"><div class="premium">UGX 1,000,000</div><div class="profit">+260,000</div><div class="saved">72,000,000</div><div class="assured">90,720,000</div></div>
+      <div class="plan-row" onclick="openModal('6yr',2000000,520000,144000000,181440000)"><div class="premium">UGX 2,000,000</div><div class="profit">+520,000</div><div class="saved">144,000,000</div><div class="assured">181,440,000</div></div>
+      <div class="plan-row" onclick="openModal('6yr',3000000,780000,216000000,272160000)"><div class="premium">UGX 3,000,000</div><div class="profit">+780,000</div><div class="saved">216,000,000</div><div class="assured">272,160,000</div></div>
+      <div class="plan-row" onclick="openModal('6yr',5000000,1300000,360000000,453600000)"><div class="premium">UGX 5,000,000</div><div class="profit">+1,300,000</div><div class="saved">360,000,000</div><div class="assured">453,600,000</div></div>
+      <div class="plan-row" onclick="openModal('6yr',10000000,2600000,720000000,907200000)"><div class="premium">UGX 10,000,000</div><div class="profit">+2,600,000</div><div class="saved">720,000,000</div><div class="assured">907,200,000</div></div>
+    </div></div>
   </div>
-
-  <!-- 7 YEAR -->
   <div class="plan-panel" id="7yr">
-    <div class="plan-term-info">
-      <div class="term-badge">7 YEARS — 32% PROFIT RATE</div>
-      <div class="term-note">Works with any bank or mobile money in Uganda</div>
-    </div>
-    <div class="table-wrapper">
-      <div class="table-inner">
-        <div class="plan-header">
-          <div>Monthly Premium</div>
-          <div>Monthly Profits</div>
-          <div>Total Saved</div>
-          <div>Sum Assured (Life Cover)</div>
-        </div>
-        <div class="plan-row"><div class="premium">UGX 200,000</div><div class="profit">64,000</div><div class="saved">16,800,000</div><div class="assured">22,176,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 300,000</div><div class="profit">96,000</div><div class="saved">25,200,000</div><div class="assured">33,264,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 400,000</div><div class="profit">128,000</div><div class="saved">33,600,000</div><div class="assured">44,352,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 500,000</div><div class="profit">160,000</div><div class="saved">42,000,000</div><div class="assured">55,440,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 1,000,000</div><div class="profit">320,000</div><div class="saved">84,000,000</div><div class="assured">110,880,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 2,000,000</div><div class="profit">640,000</div><div class="saved">168,000,000</div><div class="assured">221,760,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 3,000,000</div><div class="profit">960,000</div><div class="saved">252,000,000</div><div class="assured">332,640,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 5,000,000</div><div class="profit">1,600,000</div><div class="saved">420,000,000</div><div class="assured">554,400,000</div></div>
-        <div class="plan-row"><div class="premium">UGX 10,000,000</div><div class="profit">3,200,000</div><div class="saved">840,000,000</div><div class="assured">1,108,800,000</div></div>
-      </div>
-    </div>
+    <div class="plan-term-info"><div class="term-badge">7 YEARS = 84 PAYMENTS — 32% PROFIT</div><div class="term-note">Any bank · Any mobile money · Uganda</div></div>
+    <div class="table-wrapper"><div class="table-inner">
+      <div class="plan-header"><div>Monthly Premium</div><div>Monthly Profits</div><div>Total Saved</div><div>Sum Assured</div></div>
+      <div class="plan-row" onclick="openModal('7yr',200000,64000,16800000,22176000)"><div class="premium">UGX 200,000</div><div class="profit">+64,000</div><div class="saved">16,800,000</div><div class="assured">22,176,000</div></div>
+      <div class="plan-row" onclick="openModal('7yr',300000,96000,25200000,33264000)"><div class="premium">UGX 300,000</div><div class="profit">+96,000</div><div class="saved">25,200,000</div><div class="assured">33,264,000</div></div>
+      <div class="plan-row" onclick="openModal('7yr',400000,128000,33600000,44352000)"><div class="premium">UGX 400,000</div><div class="profit">+128,000</div><div class="saved">33,600,000</div><div class="assured">44,352,000</div></div>
+      <div class="plan-row" onclick="openModal('7yr',500000,160000,42000000,55440000)"><div class="premium">UGX 500,000</div><div class="profit">+160,000</div><div class="saved">42,000,000</div><div class="assured">55,440,000</div></div>
+      <div class="plan-row" onclick="openModal('7yr',1000000,320000,84000000,110880000)"><div class="premium">UGX 1,000,000</div><div class="profit">+320,000</div><div class="saved">84,000,000</div><div class="assured">110,880,000</div></div>
+      <div class="plan-row" onclick="openModal('7yr',2000000,640000,168000000,221760000)"><div class="premium">UGX 2,000,000</div><div class="profit">+640,000</div><div class="saved">168,000,000</div><div class="assured">221,760,000</div></div>
+      <div class="plan-row" onclick="openModal('7yr',3000000,960000,252000000,332640000)"><div class="premium">UGX 3,000,000</div><div class="profit">+960,000</div><div class="saved">252,000,000</div><div class="assured">332,640,000</div></div>
+      <div class="plan-row" onclick="openModal('7yr',5000000,1600000,420000000,554400000)"><div class="premium">UGX 5,000,000</div><div class="profit">+1,600,000</div><div class="saved">420,000,000</div><div class="assured">554,400,000</div></div>
+      <div class="plan-row" onclick="openModal('7yr',10000000,3200000,840000000,1108800000)"><div class="premium">UGX 10,000,000</div><div class="profit">+3,200,000</div><div class="saved">840,000,000</div><div class="assured">1,108,800,000</div></div>
+    </div></div>
   </div>
-
-  <p style="text-align:center; color:var(--gray); font-size:12px; margin-top:16px;">
-    ⚠️ Sum Assured = Total you receive on maturity including all profits. All figures in Ugandan Shillings (UGX). Plans work with <strong>any bank or mobile money</strong> — not limited to Equity Bank.
-  </p>
+  <p class="tap-hint">👆 <span>Tap any row</span> to get a quote & contact Batema directly</p>
 </section>
-
-<!-- CALCULATOR -->
-<section class="section calc-section" id="calculator">
-  <div class="section-title">
-    <div class="eyebrow" style="color:var(--gold)">Earnings Calculator</div>
-    <h2 style="color:var(--white)">See Your Exact Payout</h2>
-    <p style="color:rgba(255,255,255,0.55)">Enter your monthly amount and pick a term to instantly see what you'll earn.</p>
-  </div>
-
+<section class="section calc-section reveal" id="calculator">
+  <div class="section-title"><div class="eyebrow" style="color:var(--gold)">Earnings Calculator</div><h2 style="color:var(--white)">Calculate Your Exact Payout</h2><p style="color:rgba(255,255,255,0.5)">Type your monthly amount — see your guaranteed return instantly.</p></div>
   <div class="calc-card">
-    <h3>💰 Investment Calculator</h3>
-    <p class="sub">Works for any bank or mobile money in Uganda</p>
-
+    <h3>💰 My Investment Calculator</h3>
+    <p class="sub">Works with any bank or mobile money in Uganda</p>
     <div class="calc-grid">
-      <div class="calc-field">
-        <label>Monthly Amount (UGX)</label>
-        <input type="number" id="calcAmount" placeholder="e.g. 500000" min="200000">
-      </div>
-      <div class="calc-field">
-        <label>Choose Term</label>
-        <select id="calcTerm">
-          <option value="5">5 Years (22% profit)</option>
-          <option value="6">6 Years (26% profit)</option>
-          <option value="7" selected>7 Years (32% profit)</option>
-        </select>
-      </div>
+      <div class="calc-field"><label>Monthly Amount (UGX)</label><input type="number" id="calcAmount" placeholder="e.g. 500000" min="200000"></div>
+      <div class="calc-field"><label>Choose Term</label><select id="calcTerm"><option value="5">5 Years — 60 payments (22%)</option><option value="6">6 Years — 72 payments (26%)</option><option value="7" selected>7 Years — 84 payments (32%)</option></select></div>
     </div>
-
-    <button class="calc-btn" onclick="calculate()">🔢 Calculate My Returns</button>
-
+    <button class="calc-btn" onclick="calculate()">🔢 Show My Returns</button>
     <div class="calc-results" id="calcResults">
       <div class="results-grid">
-        <div class="result-card">
-          <div class="r-label">You Pay Monthly</div>
-          <div class="r-value" id="r-monthly">—</div>
-        </div>
-        <div class="result-card">
-          <div class="r-label">Monthly Profit Earned</div>
-          <div class="r-value" id="r-profit">—</div>
-        </div>
-        <div class="result-card">
-          <div class="r-label">Total Premiums Paid</div>
-          <div class="r-value" id="r-paid">—</div>
-        </div>
-        <div class="result-card">
-          <div class="r-label">Total Saved at Maturity</div>
-          <div class="r-value" id="r-saved">—</div>
-        </div>
-        <div class="result-card highlight">
-          <div class="r-label">🏆 Sum Assured (What You Receive)</div>
-          <div class="r-value" id="r-assured">—</div>
-        </div>
+        <div class="result-card"><div class="r-label">Monthly Payment</div><div class="r-value" id="r-monthly">—</div></div>
+        <div class="result-card"><div class="r-label">Monthly Profit</div><div class="r-value" id="r-profit">—</div></div>
+        <div class="result-card"><div class="r-label">Total Premiums Paid</div><div class="r-value" id="r-paid">—</div></div>
+        <div class="result-card"><div class="r-label">Maturity Savings</div><div class="r-value" id="r-saved">—</div></div>
+        <div class="result-card highlight"><div class="r-label">🏆 Total Sum Assured (You Receive)</div><div class="r-value" id="r-assured">—</div></div>
       </div>
-      <a href="https://wa.me/256702377999?text=Hello!%20I%20used%20your%20calculator%20and%20I'm%20interested%20in%20the%20Investa%20Plus%20plan.%20Can%20you%20help%20me%20get%20started?" 
-         target="_blank"
-         style="display:block; text-align:center; margin-top:20px; background:var(--gold); color:var(--navy); padding:13px; border-radius:10px; font-weight:800; text-decoration:none; font-size:15px;">
-        📲 I'm Interested — Contact Agent
-      </a>
+      <a id="calcWaBtn" href="#" target="_blank" style="display:block;text-align:center;margin-top:18px;background:var(--green);color:var(--white);padding:14px;border-radius:12px;font-weight:800;text-decoration:none;font-size:15px;">📲 I'm Interested — WhatsApp Batema Now</a>
     </div>
   </div>
 </section>
-
-<!-- OTHER PRODUCTS -->
-<section class="section products-section" id="products">
-  <div class="section-title">
-    <div class="eyebrow">More Plans</div>
-    <h2>Other ICEA Lion Products</h2>
-    <p>Beyond Investa Plus — full financial protection for you and your family.</p>
-  </div>
-
+<section class="section products-section reveal" id="products">
+  <div class="section-title"><div class="eyebrow">Full Product Range</div><h2>All ICEA Lion Plans</h2><p>Beyond Investa Plus — complete financial protection for every stage of life.</p></div>
   <div class="products-grid">
-    <div class="product-card">
-      <div class="product-icon">🎓</div>
-      <h4>Toto Education Plan</h4>
-      <p>Save for your child's education with guaranteed payouts at key milestones — primary, secondary, and university.</p>
-      <span class="product-tag">Child & Family</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">👸</div>
-      <h4>Lioness Plan</h4>
-      <p>Designed specifically for women — combining life cover with savings and critical illness protection.</p>
-      <span class="product-tag">Women's Plan</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">⚰️</div>
-      <h4>ICEA Funeral Cover</h4>
-      <p>Covers funeral costs quickly so your family isn't burdened during a difficult time. Pays within 24 hours.</p>
-      <span class="product-tag">Family Protection</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">💊</div>
-      <h4>Gold Cash Medical Cover</h4>
-      <p>Cash benefits for hospitalisation — receive a daily cash allowance when admitted to any hospital.</p>
-      <span class="product-tag">Health</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">🏠</div>
-      <h4>Nyumbani Home Insurance</h4>
-      <p>Protect your home and contents against fire, theft, floods, and other unexpected events.</p>
-      <span class="product-tag">Property</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">💳</div>
-      <h4>Triple Pay Back</h4>
-      <p>A savings plan that pays back 3× your investment at maturity. Perfect for long-term wealth building.</p>
-      <span class="product-tag">Savings</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">🚗</div>
-      <h4>Simba Motor Insurance</h4>
-      <p>Comprehensive and third-party motor cover for private and commercial vehicles across Uganda.</p>
-      <span class="product-tag">Vehicle</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">🏦</div>
-      <h4>Personal Retirement Scheme</h4>
-      <p>Build a nest egg for retirement with flexible monthly contributions and guaranteed returns.</p>
-      <span class="product-tag">Pension</span>
-    </div>
+    <div class="product-card"><div class="product-icon">🎓</div><h4>Toto Education Plan</h4><p>Guaranteed payouts at primary, secondary & university milestones.</p><span class="product-tag">Child & Education</span></div>
+    <div class="product-card"><div class="product-icon">👸</div><h4>Lioness Plan</h4><p>Built for women — combines life cover with savings and critical illness protection.</p><span class="product-tag">Women's Plan</span></div>
+    <div class="product-card"><div class="product-icon">⚰️</div><h4>ICEA Funeral Cover</h4><p>Fast funeral payout within 24 hours so your family isn't burdened during grief.</p><span class="product-tag">Last Expense</span></div>
+    <div class="product-card"><div class="product-icon">💊</div><h4>Gold Cash Medical Cover</h4><p>Daily cash allowance when hospitalised — at any hospital in Uganda.</p><span class="product-tag">Health</span></div>
+    <div class="product-card"><div class="product-icon">🏠</div><h4>Nyumbani Home Insurance</h4><p>Protect your home against fire, theft, floods and other disasters.</p><span class="product-tag">Property</span></div>
+    <div class="product-card"><div class="product-icon">💳</div><h4>Triple Pay Back</h4><p>A savings plan that returns 3× your investment at maturity.</p><span class="product-tag">Savings</span></div>
+    <div class="product-card"><div class="product-icon">🚗</div><h4>Simba Motor Insurance</h4><p>Comprehensive & third-party cover for private and commercial vehicles.</p><span class="product-tag">Vehicle</span></div>
+    <div class="product-card"><div class="product-icon">🏦</div><h4>Personal Retirement Scheme</h4><p>Build a retirement nest egg with flexible monthly contributions.</p><span class="product-tag">Pension</span></div>
   </div>
-
-  <div style="text-align:center; margin-top:32px;">
-    <a href="https://wa.me/256702377999?text=Hi!%20I'd%20like%20to%20know%20more%20about%20ICEA%20Lion%20plans." target="_blank" class="btn-primary" style="display:inline-flex;">
-      💬 Ask About Any Plan
-    </a>
-  </div>
+  <div style="text-align:center;margin-top:32px;"><a href="https://wa.me/256702377999?text=Hi%20Batema!%20I%20want%20to%20know%20more%20about%20ICEA%20Lion%20plans." target="_blank" class="btn-gold" style="display:inline-flex;">💬 Ask Batema About Any Plan</a></div>
 </section>
-
-<!-- BENEFITS -->
-<section class="section benefits-section">
-  <div class="section-title">
-    <div class="eyebrow">Why Investa Plus</div>
-    <h2>Additional Benefits Included</h2>
-  </div>
-
+<section class="section benefits-section reveal">
+  <div class="section-title"><div class="eyebrow">Investa Plus Bonuses</div><h2>What Else Is Included?</h2><p>Every Investa Plus plan comes with these powerful benefits at no extra cost.</p></div>
   <div class="benefits-grid">
-    <div class="benefit-item">
-      <div class="benefit-icon">💀</div>
-      <div>
-        <h4>Last Expense Benefit</h4>
-        <p>Pays 10% of your Sum Assured (max UGX 5,000,000) immediately to cover funeral costs.</p>
-      </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-icon">🎯</div>
-      <div>
-        <h4>Death Benefit at Maturity</h4>
-        <p>Your family receives the full Sum Assured if you pass away before the plan ends.</p>
-      </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-icon">♿</div>
-      <div>
-        <h4>Permanent Total Disability</h4>
-        <p>Full payout if you become permanently disabled — your investment is still protected.</p>
-      </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-icon">🛑</div>
-      <div>
-        <h4>Paid-Up Provision</h4>
-        <p>Hit financial challenges? The plan can be paused — you don't lose what you've already saved.</p>
-      </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-icon">💸</div>
-      <div>
-        <h4>Tax Free Returns</h4>
-        <p>Every shilling you earn from this plan is 100% tax free. No hidden monthly charges.</p>
-      </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-icon">🏦</div>
-      <div>
-        <h4>Any Bank / Mobile Money</h4>
-        <p>Pay via MTN, Airtel, Equity, Stanbic, DFCU, Centenary — whatever works for you.</p>
-      </div>
-    </div>
+    <div class="benefit-item"><div class="benefit-icon">💀</div><div><h4>Last Expense Benefit</h4><p>Pays 10% of your Sum Assured (max UGX 5,000,000) immediately for funeral costs.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">🎯</div><div><h4>Death Benefit</h4><p>Your family receives the full Sum Assured if you pass away before the plan ends.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">♿</div><div><h4>Total Disability Cover</h4><p>Full payout if you become permanently disabled — your savings are fully protected.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">⏸️</div><div><h4>Paid-Up Provision</h4><p>Financial hardship? Pause the plan — you don't lose what you've already saved.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">💸</div><div><h4>100% Tax Free</h4><p>Every shilling you earn is completely tax free. No monthly charges. No surprises.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">📱</div><div><h4>Any Bank / Mobile Money</h4><p>Pay via MTN, Airtel, Equity, Stanbic, DFCU, Centenary — your choice.</p></div></div>
   </div>
 </section>
-
-<!-- AGENT CTA -->
-<section class="agent-section" id="contact">
-  <h2>Ready to Start Saving Today?</h2>
-  <p>Talk to your certified ICEA Lion agent. Get a personalised plan, no paperwork headaches — we handle everything.</p>
-
-  <div class="contact-cards">
-    <div class="contact-card">
-      <div class="c-icon">📱</div>
-      <div class="c-label">WhatsApp / Call</div>
-      <div class="c-num">0702 377 999</div>
-    </div>
-    <div class="contact-card">
-      <div class="c-icon">📱</div>
-      <div class="c-label">WhatsApp / Call</div>
-      <div class="c-num">0779 710 365</div>
-    </div>
+<section class="section faq-section reveal" id="faq">
+  <div class="section-title"><div class="eyebrow">Common Questions</div><h2>Frequently Asked Questions</h2><p>Tap any question to expand the answer.</p></div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What is Investa Plus?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Investa Plus is a savings and investment plan by ICEA Lion Life Assurance Uganda. You save a fixed amount every month for 5, 6, or 7 years and at the end you receive your savings plus guaranteed profits — all tax free. Your family is also protected with life cover throughout the plan.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Does it work with my bank or mobile money?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Yes — 100%. Investa Plus works with any bank in Uganda (Equity, Stanbic, DFCU, Centenary, Absa, KCB, PostBank and more) and any mobile money (MTN MoMo, Airtel Money).</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>I don't have a bank account. Can I still join?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Absolutely. Batema Kenneth will personally help you open an Equity Bank account for free — the same day. All you need is your National ID. Mobile money (MTN or Airtel) also works without a bank account.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Isn't 5 or 7 years too long to wait?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Think about where you were 5 years ago. That time passed quickly, didn't it? 5 years is just 60 monthly payments. The time will pass either way. The question is: will you have something to show for it?</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What is the minimum I can save monthly?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">The minimum monthly premium is UGX 200,000. There is no maximum — the more you save, the bigger your payout at maturity.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What happens if I miss a monthly payment?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">ICEA Lion has a paid-up provision. If you face financial challenges, your plan doesn't collapse — it becomes "paid up" and you still receive the value of what you've already saved, plus proportional profits, at maturity.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Is my money safe with ICEA Lion?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Absolutely. ICEA Lion has been operating in East Africa since 1964 — over 60 years. They are licensed and regulated by the Insurance Regulatory Authority (IRA) of Uganda. Your investment is fully protected under Ugandan law.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What does "Sum Assured" mean?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Sum Assured is the total amount you are guaranteed to receive at the end of your plan term. It includes all your monthly savings plus the guaranteed profit added on top.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How do I start? How long does it take?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Send Batema a WhatsApp message or call him. He'll guide you through the documents, fill in the forms with you, and your plan can be active within 1–2 working days. Batema can come to you.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are the returns really tax free?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Yes — 100% tax free. All profits earned from your Investa Plus plan are exempt from income tax under Ugandan insurance regulations. There are also no monthly management fees or hidden charges.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I get a loan against my policy?</span><div class="icon">+</div></div><div class="faq-a"><div class="faq-a-inner">Yes. After your policy has been active for a period of time and has built sufficient value, you may be eligible to borrow against the cash value of your policy. Contact Batema for specific eligibility criteria.</div></div></div>
   </div>
-
-  <a href="https://wa.me/256702377999?text=Hello!%20I%20want%20to%20start%20an%20ICEA%20Lion%20Investa%20Plus%20plan.%20Can%20you%20help%20me%3F" 
-     target="_blank" class="wa-btn-big">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    Chat on WhatsApp Now
-  </a>
-
-  <p style="margin-top:20px; font-size:12px; opacity:0.5;">
-    Or visit the official website: <a href="https://www.icealion.co.ug" target="_blank" style="color:var(--gold);">icealion.co.ug</a>
-  </p>
+  <div style="text-align:center;margin-top:36px;"><a href="https://wa.me/256702377999?text=Hi%20Batema!%20I%20have%20a%20question." target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--white);padding:14px 28px;border-radius:14px;font-weight:700;font-size:14px;text-decoration:none;">💬 Still Have a Question? Ask Batema</a></div>
 </section>
-
-<!-- FOOTER -->
+<section class="agent-section reveal" id="contact">
+  <div class="section-title"><div class="eyebrow" style="color:var(--gold)">Your Agent</div><h2 style="color:var(--white)">Ready to Start? Talk to Batema.</h2><p style="color:rgba(255,255,255,0.6)">One conversation is all it takes. No pressure, no commitment — just honest advice.</p></div>
+  <div class="agent-card"><div class="agent-avatar-lg">BK</div><div class="a-name">Batema Kenneth</div><div class="a-title">🦁 ICEA Lion Authorised Agent</div><div class="a-lic">Equity Bancassurance · Uganda · IRA Regulated</div></div>
+  <div class="contact-btns">
+    <a href="https://wa.me/256702377999?text=Hi%20Batema!%20I%20want%20to%20start%20an%20ICEA%20Lion%20Investa%20Plus%20plan." target="_blank" class="cta-btn cta-wa-big"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp Batema Now</a>
+    <div class="contact-row">
+      <a href="tel:+256702377999" class="cta-btn cta-call1">📞 Call Now<span class="cta-num">0702 377 999</span></a>
+      <a href="tel:+256779710365" class="cta-btn cta-call2">📞 Call Now<span class="cta-num">0779 710 365</span></a>
+    </div>
+    <div class="contact-row">
+      <a href="https://wa.me/256779710365?text=Hi%20Batema!" target="_blank" class="cta-btn cta-call2"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp Alt<span class="cta-num">0779 710 365</span></a>
+      <a href="https://www.icealion.co.ug" target="_blank" class="cta-btn cta-call1">🌐 Official Site<span class="cta-num">icealion.co.ug</span></a>
+    </div>
+    <button onclick="openShare()" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:14px;border:2px solid rgba(255,255,255,0.2);background:transparent;color:var(--white);font-weight:700;font-size:14px;cursor:pointer;">📤 Share This Page With Someone You Care About</button>
+  </div>
+</section>
 <footer>
-  <p class="disclaimer">
-    This page is operated by an authorised ICEA Lion Life Assurance agent in Uganda. All plans are underwritten by 
-    <a href="https://www.icealion.co.ug" target="_blank">ICEA Lion Life Assurance Company (U) Limited</a>, 
-    licensed by the Insurance Regulatory Authority of Uganda. Figures shown are illustrative based on official rate sheets.
-  </p>
-  <p style="margin-top:12px;">© 2025 ICEA Lion Authorised Agent · Uganda</p>
+  <div class="footer-links"><a href="#journey">Your Journey</a><a href="#requirements">How to Join</a><a href="#plans">Earnings Table</a><a href="#calculator">Calculator</a><a href="#products">All Products</a><a href="#faq">FAQ</a><a href="https://www.icealion.co.ug" target="_blank">Official ICEA Lion Site</a></div>
+  <p class="footer-disc">This page is operated by <strong style="color:rgba(255,255,255,0.7)">Batema Kenneth</strong>, an authorised ICEA Lion Life Assurance agent in Uganda. All plans are underwritten by <a href="https://www.icealion.co.ug" target="_blank">ICEA Lion Life Assurance Company (U) Limited</a>, licensed by the Insurance Regulatory Authority of Uganda (IRA). Figures are illustrative based on official rate sheets.</p>
+  <p style="margin-top:12px;">© 2025 Batema Kenneth · ICEA Lion Authorised Agent · Uganda</p>
 </footer>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/256702377999?text=Hi!%20I%20want%20to%20learn%20about%20ICEA%20Lion%20plans." 
-   target="_blank" class="float-wa" title="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
-
+<a href="https://wa.me/256702377999?text=Hi%20Batema!%20I%20saw%20your%20page%20and%20I'm%20interested." target="_blank" class="float-wa"><span class="float-label">Chat with Batema</span><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-plan-label" id="m-plan">Investa Plus · 5 Years</div>
+      <div class="modal-amount" id="m-amount">UGX 500,000 / month</div>
+      <div class="modal-assured" id="m-assured">Sum Assured: 36,600,000</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-details"><div class="modal-detail"><div class="d-label">Monthly Profit</div><div class="d-value" id="m-profit">—</div></div><div class="modal-detail"><div class="d-label">Total Saved</div><div class="d-value" id="m-saved">—</div></div></div>
+      <div class="modal-agent"><div class="modal-agent-avatar">BK</div><div class="modal-agent-info"><div class="a-name">Batema Kenneth</div><div class="a-role">🦁 ICEA Lion Authorised Agent</div><div class="a-lic">IRA Regulated · Equity Bancassurance</div></div></div>
+      <div class="modal-cta-title">Ready to start this plan? Contact Batema now:</div>
+      <div class="modal-actions">
+        <a id="m-wa1" href="#" target="_blank" class="modal-btn btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp Batema — 0702 377 999</a>
+        <div class="modal-or">— or call directly —</div>
+        <a href="tel:+256702377999" class="modal-btn btn-call1">📞 Call 0702 377 999</a>
+        <a href="tel:+256779710365" class="modal-btn btn-call2">📞 Call 0779 710 365</a>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
-  function switchPlan(id, btn) {
-    document.querySelectorAll('.plan-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.plan-tab').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    btn.classList.add('active');
-  }
-
-  function fmt(n) {
-    return 'UGX ' + Math.round(n).toLocaleString('en-UG');
-  }
-
-  function calculate() {
-    const amount = parseFloat(document.getElementById('calcAmount').value);
-    const term = parseInt(document.getElementById('calcTerm').value);
-
-    if (!amount || amount < 200000) {
-      alert('Please enter a monthly amount of at least UGX 200,000.');
-      return;
-    }
-
-    const rates = { 5: 0.22, 6: 0.26, 7: 0.32 };
-    const rate = rates[term];
-    const months = term * 12;
-    const totalPaid = amount * months;
-    const monthlyProfit = amount * rate;
-    const totalSaved = totalPaid; // base savings
-    const sumAssured = totalSaved * (1 + rate);
-
-    document.getElementById('r-monthly').textContent = fmt(amount);
-    document.getElementById('r-profit').textContent = fmt(monthlyProfit);
-    document.getElementById('r-paid').textContent = fmt(totalPaid);
-    document.getElementById('r-saved').textContent = fmt(totalSaved);
-    document.getElementById('r-assured').textContent = fmt(sumAssured);
-
-    const results = document.getElementById('calcResults');
-    results.classList.add('show');
-    results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  // smooth scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-    });
-  });
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hide'),1600);});
+function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=parseInt(el.dataset.count);let cur=0;const step=Math.ceil(target/40);const timer=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=cur+'%';if(cur>=target)clearInterval(timer);},40);});}
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+setTimeout(animateCounters,1700);
+function switchPlan(id,btn){document.querySelectorAll('.plan-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.plan-tab').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
+function fmt(n){return'UGX '+Math.round(n).toLocaleString('en-UG');}
+function openModal(term,premium,profit,saved,assured){const labels={'5yr':'5 Years · 22% Profit','6yr':'6 Years · 26% Profit','7yr':'7 Years · 32% Profit'};document.getElementById('m-plan').textContent='Investa Plus · '+labels[term];document.getElementById('m-amount').textContent=fmt(premium)+' / month';document.getElementById('m-assured').textContent='🏆 Sum Assured: '+fmt(assured);document.getElementById('m-profit').textContent=fmt(profit);document.getElementById('m-saved').textContent=fmt(saved);const msg=encodeURIComponent(`Hi Batema! I'm interested in the Investa Plus ${labels[term]} plan at ${fmt(premium)}/month. Sum Assured: ${fmt(assured)}. Can you help me get started?`);document.getElementById('m-wa1').href=`https://wa.me/256702377999?text=${msg}`;document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+function closeModalOutside(e){if(e.target.id==='modal')closeModal();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeShare();}});
+function calculate(){const amount=parseFloat(document.getElementById('calcAmount').value);const term=parseInt(document.getElementById('calcTerm').value);if(!amount||amount<200000){alert('Please enter at least UGX 200,000.');return;}const rates={5:0.22,6:0.26,7:0.32};const rate=rates[term];const totalPaid=amount*term*12;const monthlyProfit=amount*rate;const sumAssured=totalPaid*(1+rate);document.getElementById('r-monthly').textContent=fmt(amount);document.getElementById('r-profit').textContent=fmt(monthlyProfit);document.getElementById('r-paid').textContent=fmt(totalPaid);document.getElementById('r-saved').textContent=fmt(totalPaid);document.getElementById('r-assured').textContent=fmt(sumAssured);const msg=encodeURIComponent(`Hi Batema! I used your calculator. Saving ${fmt(amount)}/month for ${term} years gives me ${fmt(sumAssured)}. I want to start!`);document.getElementById('calcWaBtn').href=`https://wa.me/256702377999?text=${msg}`;const res=document.getElementById('calcResults');res.classList.add('show');res.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function toggleFaq(el){const item=el.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');}
+const PAGE_URL=window.location.href;const SHARE_TEXT="🦁 Save money & protect your family with ICEA Lion Uganda! Earn up to 32% tax-free returns. Start from UGX 200,000/month. Contact Batema Kenneth:";
+function openShare(){if(navigator.share){navigator.share({title:'ICEA Lion — Batema Kenneth',text:SHARE_TEXT,url:PAGE_URL});}else{document.getElementById('shareModal').classList.add('open');document.body.style.overflow='hidden';}}
+function closeShare(){document.getElementById('shareModal').classList.remove('open');document.body.style.overflow='';}
+function closeShareOutside(e){if(e.target.id==='shareModal')closeShare();}
+function shareWA(){window.open(`https://wa.me/?text=${encodeURIComponent(SHARE_TEXT+' '+PAGE_URL)}`,'_blank');closeShare();}
+function shareFB(){window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(PAGE_URL)}`,'_blank');closeShare();}
+function shareTwitter(){window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(SHARE_TEXT)}&url=${encodeURIComponent(PAGE_URL)}`,'_blank');closeShare();}
+function copyLink(){navigator.clipboard.writeText(PAGE_URL).then(()=>{closeShare();const toast=document.getElementById('shareToast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3000);});}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
 </script>
 </body>
 </html>
