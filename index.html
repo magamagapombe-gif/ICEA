@@ -34,7 +34,18 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--offwhite);colo
 .loader-text{color:rgba(255,255,255,0.6);font-size:13px;letter-spacing:0.1em;}
 @keyframes load{from{width:0}to{width:100%}}
 @keyframes bounce{from{transform:translateY(0)}to{transform:translateY(-12px)}}
-nav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:12px 5%;position:sticky;top:0;z-index:500;box-shadow:0 2px 20px rgba(0,0,0,0.4);}
+nav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:12px 5%;position:sticky;top:0;z-index:500;box-shadow:0 2px 20px rgba(0,0,0,0.4);gap:10px;}
+.menu-btn{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:var(--white);width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+.side-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:950;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.side-overlay.open{opacity:1;pointer-events:all;}
+.side-menu{position:fixed;top:0;left:0;bottom:0;width:280px;max-width:82vw;background:var(--navy);z-index:960;transform:translateX(-100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;box-shadow:8px 0 40px rgba(0,0,0,0.4);}
+.side-menu.open{transform:translateX(0);}
+.side-menu-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.side-menu-head .sm-title{color:var(--gold);font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;}
+.side-menu-head button{background:rgba(255,255,255,0.08);border:none;color:var(--white);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:14px;}
+.side-menu-section{padding:14px 20px 4px;color:rgba(255,255,255,0.35);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.side-menu a{display:flex;align-items:center;gap:12px;padding:13px 20px;color:rgba(255,255,255,0.85);text-decoration:none;font-size:14px;font-weight:600;border-left:3px solid transparent;transition:background 0.2s,border-color 0.2s;}
+.side-menu a:hover{background:rgba(201,151,58,0.1);border-left-color:var(--gold);color:var(--gold);}
 .nav-brand{display:flex;align-items:center;gap:12px;}
 .nav-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:17px;color:var(--navy);flex-shrink:0;border:2px solid rgba(255,255,255,0.2);overflow:hidden;}
 .nav-avatar img{width:100%;height:100%;object-fit:cover;}
@@ -319,6 +330,7 @@ footer a{color:var(--gold);text-decoration:none;}
 </div>
 <div class="ticker"><div class="ticker-inner"><span>🦁 ICEA Lion Uganda — Trusted Since 1964</span><span>💰 Earn up to 32% returns — Tax Free</span><span>📲 WhatsApp Batema Kenneth: 0702 377 999</span><span>🏦 Works with ANY bank or mobile money in Uganda</span><span>🛡️ Life Cover Included — No extra cost</span><span>✅ IRA Licensed · Equity Bancassurance Partner</span><span>🎓 Toto Education Plan · 👸 Lioness Plan · 🚗 Simba Motor</span><span>🦁 ICEA Lion Uganda — Trusted Since 1964</span><span>💰 Earn up to 32% returns — Tax Free</span><span>📲 WhatsApp Batema Kenneth: 0702 377 999</span><span>🏦 Works with ANY bank or mobile money in Uganda</span><span>🛡️ Life Cover Included — No extra cost</span><span>✅ IRA Licensed · Equity Bancassurance Partner</span><span>🎓 Toto Education Plan · 👸 Lioness Plan · 🚗 Simba Motor</span></div></div>
 <nav>
+  <button class="menu-btn" onclick="openSideMenu()" aria-label="Menu">☰</button>
   <div class="nav-brand">
     <div class="nav-avatar"><img src="data:image/jpeg;base64,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" alt="Batema Kenneth"></div>
     <div class="nav-info"><div class="nav-name">Batema Kenneth</div><div class="nav-role">ICEA Lion Authorised Agent</div></div>
@@ -329,6 +341,24 @@ footer a{color:var(--gold);text-decoration:none;}
     <a href="https://wa.me/256702377999?text=Hi%20Batema!%20I'm%20interested%20in%20ICEA%20Lion%20plans." target="_blank" class="nav-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a>
   </div>
 </nav>
+<div class="side-overlay" id="sideOverlay" onclick="closeSideMenu()"></div>
+<div class="side-menu" id="sideMenu">
+  <div class="side-menu-head"><span class="sm-title">🦁 Menu</span><button onclick="closeSideMenu()">✕</button></div>
+  <div class="side-menu-section">Get Started</div>
+  <a href="#journey" onclick="closeSideMenu()">🚀 Your Journey</a>
+  <a href="#requirements" onclick="closeSideMenu()">📝 How to Join</a>
+  <a href="#calculator" onclick="closeSideMenu()">🔢 Calculator</a>
+  <div class="side-menu-section">Investa Plus</div>
+  <a href="#plans" onclick="closeSideMenu()">📊 Earnings Table</a>
+  <div class="side-menu-section">Other Plans</div>
+  <a href="#endowment" onclick="closeSideMenu()">♟️ Endowment Plan</a>
+  <a href="#toto" onclick="closeSideMenu()">🎓 Toto Education Plan</a>
+  <a href="#triplepay" onclick="closeSideMenu()">💳 Triple Pay Back</a>
+  <a href="#products" onclick="closeSideMenu()">🗂️ All Products</a>
+  <div class="side-menu-section">More</div>
+  <a href="#faq" onclick="closeSideMenu()">❓ FAQ</a>
+  <a href="#contact" onclick="closeSideMenu()">📞 Contact Batema</a>
+</div>
 <section class="hero">
   <div class="hero-orb hero-orb1"></div><div class="hero-orb hero-orb2"></div><div class="hero-orb hero-orb3"></div>
   <div class="agent-pill"><div class="dot"></div><span>Agent <span class="gold">Batema Kenneth</span> is available now</span></div>
@@ -522,17 +552,105 @@ footer a{color:var(--gold);text-decoration:none;}
 <section class="section products-section reveal" id="products">
   <div class="section-title"><div class="eyebrow">Full Product Range</div><h2>All ICEA Lion Plans</h2><p>Beyond Investa Plus — complete financial protection for every stage of life.</p></div>
   <div class="products-grid">
-    <div class="product-card"><div class="product-icon">🎓</div><h4>Toto Education Plan</h4><p>Guaranteed payouts at primary, secondary & university milestones.</p><span class="product-tag">Child & Education</span></div>
+    <div class="product-card" onclick="location.href='#endowment'"><div class="product-icon">♟️</div><h4>Endowment Plan</h4><p>Life cover + investment in one. Save monthly, collect your sum assured plus bonuses at maturity or earlier death.</p><span class="product-tag">Savings & Cover</span></div>
+    <div class="product-card" onclick="location.href='#toto'"><div class="product-icon">🎓</div><h4>Toto Education Plan</h4><p>Guaranteed school fees paid directly to your child's school — anywhere in the world.</p><span class="product-tag">Child & Education</span></div>
     <div class="product-card"><div class="product-icon">👸</div><h4>Lioness Plan</h4><p>Built for women — combines life cover with savings and critical illness protection.</p><span class="product-tag">Women's Plan</span></div>
     <div class="product-card"><div class="product-icon">⚰️</div><h4>ICEA Funeral Cover</h4><p>Fast funeral payout within 24 hours so your family isn't burdened during grief.</p><span class="product-tag">Last Expense</span></div>
     <div class="product-card"><div class="product-icon">💊</div><h4>Gold Cash Medical Cover</h4><p>Daily cash allowance when hospitalised — at any hospital in Uganda.</p><span class="product-tag">Health</span></div>
     <div class="product-card"><div class="product-icon">🏠</div><h4>Nyumbani Home Insurance</h4><p>Protect your home against fire, theft, floods and other disasters.</p><span class="product-tag">Property</span></div>
-    <div class="product-card"><div class="product-icon">💳</div><h4>Triple Pay Back</h4><p>A savings plan that returns 3× your investment at maturity.</p><span class="product-tag">Savings</span></div>
+    <div class="product-card" onclick="location.href='#triplepay'"><div class="product-icon">💳</div><h4>Triple Pay Back</h4><p>Get paid out 3 times during the life of the policy — without losing your life cover.</p><span class="product-tag">Savings</span></div>
     <div class="product-card"><div class="product-icon">🚗</div><h4>Simba Motor Insurance</h4><p>Comprehensive & third-party cover for private and commercial vehicles.</p><span class="product-tag">Vehicle</span></div>
     <div class="product-card"><div class="product-icon">🏦</div><h4>Personal Retirement Scheme</h4><p>Build a retirement nest egg with flexible monthly contributions.</p><span class="product-tag">Pension</span></div>
   </div>
   <div style="text-align:center;margin-top:32px;"><a href="https://wa.me/256702377999?text=Hi%20Batema!%20I%20want%20to%20know%20more%20about%20ICEA%20Lion%20plans." target="_blank" class="btn-gold" style="display:inline-flex;">💬 Ask Batema About Any Plan</a></div>
 </section>
+
+<section class="section table-section reveal" id="endowment">
+  <div class="section-title"><div class="eyebrow">Life Cover + Investment</div><h2>The Endowment Plan</h2><p>Save monthly, get life cover from day one, and collect your full Sum Assured plus bonuses at maturity — or your family gets it immediately if anything happens to you.</p></div>
+  <div class="benefits-grid" style="margin-bottom:32px;">
+    <div class="benefit-item"><div class="benefit-icon">🎯</div><div><h4>Full Payout on Death</h4><p>Lump sum equal to the Sum Assured paid out if you pass away anytime during the policy term.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">⚡</div><div><h4>Accident & Disability Cover</h4><p>Up to UGX 20,000,000 extra for permanent or accidental death, each.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">🏥</div><div><h4>Critical Illness Benefit</h4><p>Up to 30% of your Sum Assured paid out on diagnosis of a covered critical illness.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">🤝</div><div><h4>Security-Free Loan</h4><p>Borrow against your policy anytime during the term — no collateral needed.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">⏸️</div><div><h4>Surrender & Paid-Up Options</h4><p>Financial difficulty? Surrender for cash or convert to paid-up — you don't lose everything.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">📈</div><div><h4>Bonus-Earning</h4><p>Bonuses are added to your Sum Assured every year and paid out together at maturity.</p></div></div>
+  </div>
+  <div class="plan-term-info"><div class="term-badge">SAMPLE QUOTE · AGE 45 · 10-YEAR TERM</div></div>
+  <div class="table-wrapper"><div class="table-inner">
+    <div class="plan-header"><div>Monthly Savings</div><div>Total Saved</div><div>Bonus Estimate</div><div>Est. Maturity</div></div>
+    <div class="plan-row"><div class="premium">UGX 100,000</div><div class="saved">12,000,000</div><div class="profit">5,452,896</div><div class="assured">17,452,896</div></div>
+    <div class="plan-row"><div class="premium">UGX 300,000</div><div class="saved">36,000,000</div><div class="profit">15,245,883</div><div class="assured">51,245,883</div></div>
+    <div class="plan-row"><div class="premium">UGX 500,000</div><div class="saved">60,000,000</div><div class="profit">25,225,890</div><div class="assured">85,225,890</div></div>
+    <div class="plan-row"><div class="premium">UGX 700,000</div><div class="saved">84,000,000</div><div class="profit">34,996,892</div><div class="assured">118,996,892</div></div>
+  </div></div>
+  <div style="text-align:center;margin-top:28px;"><a href="https://wa.me/256702377999?text=Hi%20Batema!%20I'm%20interested%20in%20the%20Endowment%20Plan." target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);padding:14px 28px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;">💬 Get My Endowment Quote — WhatsApp Batema</a></div>
+</section>
+
+<section class="section table-section reveal" id="toto" style="background:var(--offwhite);">
+  <div class="section-title"><div class="eyebrow">Guaranteed School Fees</div><h2>Toto Education Plan</h2><p>ICEA Lion guarantees your child's school fees — not just an estimate. Choose your school, choose your term, and fees get paid even if you're no longer there to pay them.</p></div>
+  <div class="benefits-grid" style="margin-bottom:32px;">
+    <div class="benefit-item"><div class="benefit-icon">🏫</div><div><h4>Pay Any School, Anywhere</h4><p>Fees go to the school of your choice — anywhere in the world. The level of cover you buy matches your desired school.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">🛡️</div><div><h4>Premiums Waived on Death/Disability</h4><p>If a parent dies or is permanently disabled, future premiums are exempted — but the plan stays active until benefits are paid.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">💰</div><div><h4>Last Expense Rider</h4><p>15% of the main benefit is paid immediately for funeral costs if a parent dies during the premium-paying term.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">👶</div><div><h4>Child Income Benefit</h4><p>An extra 15% of the main benefit is paid every year until maturity if a parent dies during the premium-paying period.</p></div></div>
+  </div>
+  <p style="text-align:center;color:var(--gray);font-size:13px;max-width:560px;margin:0 auto 24px;">Pay premiums for 5–21 years; ICEA then pays your child's fees in instalments over 3–10 years. Minimum premium UGX 100,000/month.</p>
+  <div class="plan-tabs">
+    <button class="plan-tab active" onclick="switchPlan('toto5',this)">5 Years</button>
+    <button class="plan-tab" onclick="switchPlan('toto6',this)">6 Years</button>
+    <button class="plan-tab" onclick="switchPlan('toto7',this)">7 Years</button>
+  </div>
+  <div class="plan-panel active" id="toto5">
+    <div class="table-wrapper"><div class="table-inner">
+      <div class="plan-header"><div>Monthly Premium</div><div>Fees Saved</div><div>Fund Growth</div><div>Sum Assured</div></div>
+      <div class="plan-row"><div class="premium">100,000</div><div class="saved">6,000,000</div><div class="profit">2,000,000</div><div class="assured">8,000,000</div></div>
+      <div class="plan-row"><div class="premium">300,000</div><div class="saved">18,000,000</div><div class="profit">6,000,000</div><div class="assured">24,000,000</div></div>
+      <div class="plan-row"><div class="premium">500,000</div><div class="saved">30,000,000</div><div class="profit">10,000,000</div><div class="assured">40,000,000</div></div>
+      <div class="plan-row"><div class="premium">1,000,000</div><div class="saved">60,000,000</div><div class="profit">20,000,000</div><div class="assured">80,000,000</div></div>
+    </div></div>
+  </div>
+  <div class="plan-panel" id="toto6">
+    <div class="table-wrapper"><div class="table-inner">
+      <div class="plan-header"><div>Monthly Premium</div><div>Fees Saved</div><div>Fees Bonus</div><div>Sum Assured</div></div>
+      <div class="plan-row"><div class="premium">100,000</div><div class="saved">7,200,000</div><div class="profit">2,190,000</div><div class="assured">9,390,000</div></div>
+      <div class="plan-row"><div class="premium">300,000</div><div class="saved">21,600,000</div><div class="profit">6,570,000</div><div class="assured">28,170,000</div></div>
+      <div class="plan-row"><div class="premium">500,000</div><div class="saved">36,000,000</div><div class="profit">10,960,000</div><div class="assured">46,960,000</div></div>
+      <div class="plan-row"><div class="premium">1,000,000</div><div class="saved">72,000,000</div><div class="profit">21,920,000</div><div class="assured">93,920,000</div></div>
+    </div></div>
+  </div>
+  <div class="plan-panel" id="toto7">
+    <div class="table-wrapper"><div class="table-inner">
+      <div class="plan-header"><div>Monthly Premium</div><div>Fees Saved</div><div>Fees Bonus</div><div>Sum Assured</div></div>
+      <div class="plan-row"><div class="premium">100,000</div><div class="saved">8,400,000</div><div class="profit">2,600,000</div><div class="assured">11,060,000</div></div>
+      <div class="plan-row"><div class="premium">300,000</div><div class="saved">25,200,000</div><div class="profit">7,990,000</div><div class="assured">33,190,000</div></div>
+      <div class="plan-row"><div class="premium">500,000</div><div class="saved">42,000,000</div><div class="profit">13,330,000</div><div class="assured">55,330,000</div></div>
+      <div class="plan-row"><div class="premium">1,000,000</div><div class="saved">84,000,000</div><div class="profit">26,000,000</div><div class="assured">110,000,000</div></div>
+    </div></div>
+  </div>
+  <div style="text-align:center;margin-top:28px;"><a href="https://wa.me/256702377999?text=Hi%20Batema!%20I'm%20interested%20in%20the%20Toto%20Education%20Plan%20for%20my%20child." target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);padding:14px 28px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;">💬 Secure My Child's Education — WhatsApp Batema</a></div>
+</section>
+
+<section class="section table-section reveal" id="triplepay">
+  <div class="section-title"><div class="eyebrow">3 Payouts, 1 Policy</div><h2>Triple Pay Back Policy</h2><p>Get paid three times during the life of your policy — partial payouts along the way, plus a final maturity payout with bonuses. Full life cover stays active throughout.</p></div>
+  <div class="benefits-grid" style="margin-bottom:32px;">
+    <div class="benefit-item"><div class="benefit-icon">💵</div><div><h4>3 Guaranteed Payouts</h4><p>E.g. on a 10-year, 100M plan: 20% at year 3, 20% at year 6, and 60% + bonuses at year 10.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">🎯</div><div><h4>Full Cover Stays Active</h4><p>If you pass away at any point, your family still gets the FULL Sum Assured — regardless of payouts already received.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">⚡</div><div><h4>Accidental Death Benefit</h4><p>Extra payout if death is caused by an accident.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">♿</div><div><h4>Permanent Total Disability</h4><p>Payable if you become irreversibly incapacitated, confirmed by a qualified doctor.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">💀</div><div><h4>Last Expense Benefit</h4><p>Helps your family cover funeral costs immediately on your passing.</p></div></div>
+    <div class="benefit-item"><div class="benefit-icon">🏥</div><div><h4>Critical Illness Benefit</h4><p>Payable on first diagnosis of a defined critical illness.</p></div></div>
+  </div>
+  <div class="plan-term-info"><div class="term-badge">SAMPLE: 10-YEAR TERM · AGE 34 · 100M SUM ASSURED</div></div>
+  <div class="table-wrapper" style="max-width:520px;margin:0 auto;"><div class="table-inner" style="min-width:auto;">
+    <div class="plan-header" style="grid-template-columns:1.3fr 1fr;"><div>Detail</div><div>Amount</div></div>
+    <div class="plan-row" style="grid-template-columns:1.3fr 1fr;"><div class="premium">Monthly Premium</div><div class="saved">1,184,400</div></div>
+    <div class="plan-row" style="grid-template-columns:1.3fr 1fr;"><div class="premium">Payout — Year 3</div><div class="assured">20,000,000</div></div>
+    <div class="plan-row" style="grid-template-columns:1.3fr 1fr;"><div class="premium">Payout — Year 6</div><div class="assured">20,000,000</div></div>
+    <div class="plan-row" style="grid-template-columns:1.3fr 1fr;"><div class="premium">Final Payout — Year 10</div><div class="assured">60,000,000</div></div>
+  </div></div>
+  <div style="text-align:center;margin-top:28px;"><a href="https://wa.me/256702377999?text=Hi%20Batema!%20I'm%20interested%20in%20the%20Triple%20Pay%20Back%20Policy." target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);padding:14px 28px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;">💬 Get My Triple Pay Back Quote — WhatsApp Batema</a></div>
+</section>
+
 <section class="section benefits-section reveal">
   <div class="section-title"><div class="eyebrow">Investa Plus Bonuses</div><h2>What Else Is Included?</h2><p>Every Investa Plus plan comes with these powerful benefits at no extra cost.</p></div>
   <div class="benefits-grid">
@@ -578,7 +696,7 @@ footer a{color:var(--gold);text-decoration:none;}
   </div>
 </section>
 <footer>
-  <div class="footer-links"><a href="#journey">Your Journey</a><a href="#requirements">How to Join</a><a href="#plans">Earnings Table</a><a href="#calculator">Calculator</a><a href="#products">All Products</a><a href="#faq">FAQ</a><a href="https://www.icealion.co.ug" target="_blank">Official ICEA Lion Site</a></div>
+  <div class="footer-links"><a href="#journey">Your Journey</a><a href="#requirements">How to Join</a><a href="#plans">Earnings Table</a><a href="#calculator">Calculator</a><a href="#endowment">Endowment</a><a href="#toto">Toto Education</a><a href="#triplepay">Triple Pay Back</a><a href="#products">All Products</a><a href="#faq">FAQ</a><a href="https://www.icealion.co.ug" target="_blank">Official ICEA Lion Site</a></div>
   <p class="footer-disc">This page is operated by <strong style="color:rgba(255,255,255,0.7)">Batema Kenneth</strong>, an authorised ICEA Lion Life Assurance agent in Uganda. All plans are underwritten by <a href="https://www.icealion.co.ug" target="_blank">ICEA Lion Life Assurance Company (U) Limited</a>, licensed by the Insurance Regulatory Authority of Uganda (IRA). Figures are illustrative based on official rate sheets.</p>
   <p style="margin-top:12px;">© 2025 Batema Kenneth · ICEA Lion Authorised Agent · Uganda</p>
 </footer>
@@ -605,6 +723,8 @@ footer a{color:var(--gold);text-decoration:none;}
   </div>
 </div>
 <script>
+function openSideMenu(){document.getElementById('sideMenu').classList.add('open');document.getElementById('sideOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeSideMenu(){document.getElementById('sideMenu').classList.remove('open');document.getElementById('sideOverlay').classList.remove('open');document.body.style.overflow='';}
 window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hide'),1600);});
 function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=parseInt(el.dataset.count);let cur=0;const step=Math.ceil(target/40);const timer=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=cur+'%';if(cur>=target)clearInterval(timer);},40);});}
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
@@ -615,7 +735,7 @@ function fmt(n){return'UGX '+Math.round(n).toLocaleString('en-UG');}
 function openModal(term,premium,profit,saved,assured){const labels={'5yr':'5 Years · 22% Profit','6yr':'6 Years · 26% Profit','7yr':'7 Years · 32% Profit'};document.getElementById('m-plan').textContent='Investa Plus · '+labels[term];document.getElementById('m-amount').textContent=fmt(premium)+' / month';document.getElementById('m-assured').textContent='🏆 Sum Assured: '+fmt(assured);document.getElementById('m-profit').textContent=fmt(profit);document.getElementById('m-saved').textContent=fmt(saved);const msg=encodeURIComponent(`Hi Batema! I'm interested in the Investa Plus ${labels[term]} plan at ${fmt(premium)}/month. Sum Assured: ${fmt(assured)}. Can you help me get started?`);document.getElementById('m-wa1').href=`https://wa.me/256702377999?text=${msg}`;document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 function closeModalOutside(e){if(e.target.id==='modal')closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeShare();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeShare();closeSideMenu();}});
 function calculate(){const amount=parseFloat(document.getElementById('calcAmount').value);const term=parseInt(document.getElementById('calcTerm').value);if(!amount||amount<200000){alert('Please enter at least UGX 200,000.');return;}const rates={5:0.22,6:0.26,7:0.32};const rate=rates[term];const totalPaid=amount*term*12;const monthlyProfit=amount*rate;const sumAssured=totalPaid*(1+rate);document.getElementById('r-monthly').textContent=fmt(amount);document.getElementById('r-profit').textContent=fmt(monthlyProfit);document.getElementById('r-paid').textContent=fmt(totalPaid);document.getElementById('r-saved').textContent=fmt(totalPaid);document.getElementById('r-assured').textContent=fmt(sumAssured);const msg=encodeURIComponent(`Hi Batema! I used your calculator. Saving ${fmt(amount)}/month for ${term} years gives me ${fmt(sumAssured)}. I want to start!`);document.getElementById('calcWaBtn').href=`https://wa.me/256702377999?text=${msg}`;const res=document.getElementById('calcResults');res.classList.add('show');res.scrollIntoView({behavior:'smooth',block:'nearest'});}
 function toggleFaq(el){const item=el.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');}
 const PAGE_URL="https://icea-six.vercel.app/";const SHARE_TEXT="🦁 Secure your financial future! Earn up to 32% tax-free on your savings with ICEA Lion Uganda. Start from just UGX 200,000/month — life cover included. See exactly what your money can buy 👇";
